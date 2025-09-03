@@ -1,0 +1,750 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>versão final</title>
+    <link rel = "stylesheet" href="assets/css/main.css"> <!--estilo geral-->
+    <link rel = "stylesheet" href="assets/css/text.css"> <!--estilo de textos-->
+    <link rel = "stylesheet" href="assets/css/sections.css"> <!--estilo de seções-->
+    <link rel = "stylesheet" href="assets/css/responsividade.css"> <!--responsividade de telas-->
+    <link rel="shortcut icon" href="assets/imagem/favicon.png"> <!--icone do site-->
+  </head>
+<body>
+
+    <!-- Sumário -->
+    <nav>
+        <a href="#comandos-df">COMANDOS DF</a>
+        <a href="#comandos-top">COMANDOS TOP</a>
+        <a href="#comandos-help">COMANDOS TERMINAL</a>
+        <a href="#permissao-linux">PERMISSÕES DO LINUX</a>
+        <a href="#redes">REDES</a>
+        <a href="#ssh">SSH</a> 
+        <a href="#samba">SAMBA</a>
+        <a href="#gerenciador-pacotes">GERENCIADOR DE PACOTES</a>
+        <a href="#filesystem">FILESYSTEM</a>
+        <a href="#xorg">XORG</a>
+        
+        
+          <!-- Botão para alternar o tema -->
+        <button onclick="toggleTheme()" class="bn62">
+            Alternar Tema
+        </button>
+        </nav>
+  
+    <!--Final do Sumário-->
+
+        <!--Script para alternar o tema-->
+        <script>
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    
+            function toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                
+                if (currentTheme === 'dark') {
+                    document.documentElement.removeAttribute('data-theme'); // Muda para modo claro
+                    document.getElementById('theme-toggle').textContent = 'Alternar para Dark'; // Atualiza texto do botão
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark'); // Muda para modo escuro
+                    document.getElementById('theme-toggle').textContent = 'Alternar para Light'; // Atualiza texto do botão
+                }
+            }
+        </script>
+        <!--Final do Script para alternar o tema-->
+        
+<!-- COMANDOS DF -->
+<section id="comandos-df" class="comandos-df">
+<h1>COMANDOS DF</h1>   
+
+<p>O comando "df" é um utilitário de linha de comando disponível em sistemas operacionais baseados em Unix e Linux. Ele é usado para exibir informações sobre o espaço em disco disponível e usado em diferentes sistemas de arquivos.</p>
+<p>Ao executar o comando "df" sem nenhuma opção ou argumento, ele mostra uma lista de todos os sistemas de arquivos montados atualmente no sistema, juntamente com informações sobre o espaço total, espaço usado e espaço livre em cada sistema de arquivos.</p>
+<p> As variáveis mais comuns que podem ser usadas com o comando "df" incluem</p>
+
+<p> 1. "-h" ou "--human-readable": exibe as informações em um formato legível para humanos, com unidades de tamanho em gigabytes (GB), megabytes (MB) ou kilobytes (KB).</p>
+<p> 2. "-T" ou "--print-type": exibe o tipo de sistema de arquivos de cada sistema de arquivos.</p>
+<p> 3. "-i" ou "--inodes": exibe informações sobre o número de inodes usados e disponíveis em cada sistema de arquivos.</p>
+<p> 4. "-t" ou "--type": exibe apenas informações para os sistemas de arquivos que correspondem ao tipo especificado. Por exemplo, "-t ext4" exibirá apenas informações para sistemas de arquivos ext4.</p>
+<p> 5. "-x" ou "--exclude-type": exclui informações para os sistemas de arquivos que correspondem ao tipo especificado. Por exemplo, "-x nfs" exclui informações para sistemas de arquivos NFS.</p>
+<p> 6. "-P" ou "--portability": usa um formato de saída portátil que pode ser usado em diferentes sistemas operacionais.</p>
+
+<p>Essas são apenas algumas das variáveis disponíveis para o comando "df". Para ver a lista completa de opções, você pode digitar "man df" no terminal para ler o manual do comando.</p>
+</section>
+ <!-- FINAL DOS COMANDOS DF -->
+
+
+
+<!-- COMANDOS TOP -->
+<section id="comandos-top" class="comandos-top">
+<h1>Comandos top (Lista de processos)</h1>
+
+<p>O comando "top" é um utilitário de linha de comando disponível em sistemas operacionais baseados em Unix e Linux. Ele é usado para exibir informações sobre os processos em execução no sistema, como uso de CPU, uso de memória e outras informações relevantes.</p>
+<p>Quando o comando "top" é executado, ele exibe uma lista de todos os processos em execução no sistema, juntamente com informações como o PID (identificador do processo), o usuário que iniciou o processo, o uso de CPU e memória, o tempo de execução e outras informações úteis.</p>
+<p>Algumas das variáveis mais comuns que podem ser usadas com o comando "top" incluem:</p>
+
+<p>1. "c" ou "COMMAND": exibe o nome do comando ou do programa que está sendo executado.</p>
+<p>2. "k" ou "KILL": permite matar um processo específico. É necessário fornecer o PID do processo.</p>
+<p>3. "n" ou "ITERATIONS": define o número de iterações que o comando "top" deve executar antes de sair.</p>
+<p>4. "p" ou "PID": exibe apenas informações para um processo específico. É necessário fornecer o PID do processo.</p>
+<p>5. "q" ou "QUIT": sai do comando "top".</p>
+<p>6. "r" ou "RENICE": altera a prioridade de um processo específico. É necessário fornecer o PID do processo.</p>
+<p>7. "s" ou "SECURITY": exibe informações sobre a segurança do sistema.</p>
+<p>8. "u" ou "USER": exibe apenas informações para um usuário específico.</p>
+<p>9. "W" ou "WRITE": salva as configurações atuais do comando "top" em um arquivo para serem usadas na próxima vez que o comando for executado.</p>
+
+<p>Essas são apenas algumas das variáveis disponíveis para o comando "top". Para ver a lista completa de opções, você pode digitar "man top" no terminal para ler o manual do comando.</p>
+</section>
+ <!-- FINAL DOS COMANDOS TOP --> 
+
+
+
+ <!-- COMANDOS HELP -->
+<section id="comandos-help" class="comandos-help">
+<h1>COMANDOS NO TERMINAL - INICIANTES</h1>
+
+<p class="pconf">Man = Manual</p>
+<p class="pconf">man nome-da-ação = vai aparecer o manual dele</p>
+<p class="pconf">EXEMPLO: man apt </p>
+<p class="pconf">Pode usar --help</p>
+<p class="pconf2">EXEMPLO: ls --help</p>
+
+<p class="pconf">COMANDOS SE VOCÊ ESTÁ PERDIDO OU NÃO SABE ONDE ESTÁ NO TERMINAL</p>
+<p class="pconf">whoami = Quem sou eu ? vai te dizer que usuario você está logado</p>
+<p class="pconf2">pwd = imprime o nome do diretório local que você está</p>
+
+<p class="pconf">Comandos no terminal, para deixar mais facil
+<p class="pconf">!! = Faz o comando que você coloca antes complementar o de cima no terminal
+<p class="pconf">exemplo: apt update no terminal sem root, ele vai dar erro e pedir para executar como root
+<p class="pconf">ao invés de colocar o comando todo com sudo na frente é só colocar sudo !! que ele complementa</p>
+<p class="pconf">history = historico, ele vai mostrar todos seus comandos e numerando eles.</p>
+<p class="pconf2">history -c = limpa todos os comandos do terminal.</p>
+
+<p class="pconf">Atalhos do Terminal:</p>
+<p class="pconf">CTRL + A = IR PARA O INICIO DA FRASE</p>
+<p class="pconf">CTRL + D = APAGA UM CARACTERE À DIREITA</p>
+<p class="pconf">CTRL + H = APAGA UM CARACTERE À ESQUERDA</p>
+<p class="pconf">CTRL + R = PROCURA NO HÍSTORICO DE COMANDOS </p>
+<p class="pconf2">CTRL + L = LIMPAR O TERMINAL</p>
+
+
+<p class="pconf2">CRIAÇÃO DE ARQUIVOS E DIRETORIOS</p>
+
+<p class="pconf">APRENDENDO A CRIAR DIRETORIOS</p>
+<p class="pconf">mkdir = cria um diretorio</p>
+<p class="pconf2">exemplo: mkdir nome-do-diretorio</p>
+
+<p class="pconf">APRENDENDO A REMOVER DIRETORIOS</p>
+<p class="pconf">rmdir = remove diretorios vazios</p>
+<p class="pconf">rm = remover (não vai ter como recuperar o arquivo, pois não vai ser enviado para lixeira).</p>
+<p class="pconf">rm -i = remover interativo, ele vai perguntar se realmente vai excluir.</p>
+<p class="pconf">rm -v = remover verbose vai dar mais detalhes sobre o arquivo.</p>
+<p class="pconf">rm -vi = seria o verbose e o interativo juntos.</p>
+<p class="pconf">rm -r = consigo remover o diretório.</p>
+
+<p class="pconf">CRIANDO ARQUIVOS DE TEXTO</p>
+<p class="pconf">Posso usar o comando touch nome-do-arquivo.EXTENSÃO</p>
+<p class="pconf2">ou posso usar nano nome-do-arquivo.EXTENSÃO (usando o nano, já vai permitir escrever, já no touch ele só cria o arquivo)</p>
+
+<p class="pconf">VERIFICAÇÃO DE DIRETORIOS E ARQUIVOS</p>
+
+<p class="pconf">Comando du (vê o espaço que um diretorio ocupa)</p>
+<p class="pconf2">exemplo du -h diretorio = mostra o gb ou mb que o diretorio ocupa</p>
+
+<p class="pconf">Comando diff = ele compara dois arquivos </p>
+<p class="pconf2">exemplo diff arquivo1.txt arquivo2.txt</p>
+
+<p class="pconf">LINK SIMBÓLICO:::</p>
+<p class="pconf">Criando link simbólico linux para pastas:</p>
+<p class="pconf">ln -s /diretorio/e/pasta nome-do-link</p>
+<p class="pconf">Removendo link Simbólico linux para pastas:</p>
+<p class="pconf2">rm nome-do-link (mesmo exemplo que seria remover um .txt)</p>
+
+<p class="pconf">ACESSANDO ROOT OU SUPERUSUARIO NO TERMINAL</p>
+<p class="pconf">root = super usuario /usuario administrativo do sistema.</p>
+<p class="pconf">sudo - = acessa root</p>
+<p class="pconf">sudo su = subistituir usuario</p>
+
+<!--COMANDOS PARA ARQUIVOS-->
+<h1>COMANDOS PARA ARQUIVOS</h1>
+
+<p>Cd</p>
+    <ul>
+        <li>cd.. = volta um nível acima</li>
+        <li>cd - = último diretório aberto</li>
+        <li>cd ~ = volta ao diretório home</li>
+    </ul>
+
+<p>Ls</p>
+    <ul>
+        <li>ls -l = listar todos os arquivos de forma longa</li>
+        <li>ls -lh = listar todos os arquivos de uma forma completa, incluindo o quanto ocupa</li>
+        <li>ls -dl = mostra as permissões do diretório</li>
+        <li>ls --color = para deixar os diretórios roxo e os arquivos verde.</li>
+    </ul>
+
+<p>Cp</p>
+    <ul>
+        <li>cp = copiar</li>
+        <li>cp -r = copiar todo o diretório</li>
+        <li>cp -b = gera cópia de segurança se o arquivo de destino já existir.</li>
+        <li>cp -f = substitui arquivos existentes sem pedir confirmação.</li>
+        <li>cp -i = pede permissão antes de substituir arquivos existentes.</li>
+        <li>cp -l = cria um link para o arquivo de origem ao invés de copiar o arquivo.</li>
+        <li>cp -v = lista os arquivos copiados.</li>
+        <li>cp --help = lista as opções disponíveis com o comando.</li>
+    </ul>
+
+<p>Mover</p>
+    <ul>
+        <li>mv arquivo1.txt arquivo2.txt /home/celoezra/Alfa = ele vai mover os arquivos para onde for especificado</li>
+        <li>mv -i arquivo.txt /home/celoezra/Alfa = vai mover de forma interativa, vai perguntar se quer sobreescrever dados se tiver um arquivo com esse nome</li>
+        <li>mv -r arquivo1.txt arquivo2.txt = vai mover de forma recursiva, alterar tudo sem perguntar</li>
+        <li>mv -n arquivo1.txt arquivo2.txt = faz a mesma coisa que o -i</li>
+        <li>mv -u arquivo1.txt arquivo2.txt = só sobreescreve se o lugar que você for jogar tiver data de alteração menor que a do arquivo que eu mandar</li>
+    </ul>
+
+<p>COMO EXTRAIR ARQUIVOS ATRAVÉS DO TERMINAL</p>
+    <ul>
+        <li>unzip nomedoarquivo.zip = serve para zip</li>
+        <li>unrar x nomedoarquivo.rar = serve para rar</li>
+        <li>tar -xvf nomedoarquivo.tar = serve para tar</li>
+        <li>tar -vzxf nomedoarquivo.tar.gz = serve para tar.gz</li>
+        <li>bunzip nomedoarquivo.bz2 = serve para bz2</li>
+        <li>tar -jxvf nomedoarquivo.tar.bz2 = serve para tar.bz2</li>
+    </ul>
+
+    <p>MONTANDO UM HD, SSD OU PENDRIVE SEM INTERFACE</p>
+    <ul>
+        <li>Você vai precisar saber o UUID do dispositivo, basicamente é a identificação dele.</li>
+        <li>Vai precisar do comando: blkid</li>
+        <li>E depois vai editar o arquivo do fstab em /etc/fstab</li>
+    </ul>
+
+    <p>Exemplo de como vai ficar montado:</p>
+    <ul>
+        <li>UUID=21da1f35-906e-45cc-bb4d-09b6779dff13 /media/BKP-LINUX/ ext4 defaults,user,auto,rw 0 0</li>
+    </ul>
+
+    <p>UUID= IDENTIFICAÇÃO DO DISPOSITIVO</p>
+    <ul>
+        <li>/MEDIA/BKP-LINUX/ = LOCAL DA MONTAGEM</li>
+        <li>EXT4 = TIPO DE FORMATAÇÃO DO DISPOSITIVO</li>
+    </ul>
+
+<p>PESQUISAR:</p>
+
+<p>Grep
+    <ul>
+        <li>grep 'palavra chave em aspas simples' no lugar que você quer procurar.</li>
+        <li>grep -i 'palavra maiúscula ou minúscula' lugar que você quer procurar.</li>
+    </ul>
+</p>
+
+<p>EDITORES:</p>
+
+<p>Nano:</p>
+    <ul>
+        <li>CTRL + X = sai do editor</li>
+        <li>CTRL + O = salva o documento</li>
+        <li>CTRL + W = procura a palavra</li>
+        <li>CTRL + K = recorta</li>
+        <li>CTRL + U = cola</li>
+        <li>CTRL + / = colocar linha que você quer encontrar</li>
+        <li>CTRL + J = justificar</li>
+    </ul>
+
+<p>Sed Editor</p>
+    <ul>
+        <li>sed -e = vai imprimir na tela do usuário, não modifica nada. exemplo: sed -e 's/PADRAO/SUBSTITUIR PELO O QUE/' (nome-do-arquivo)</li>
+        <li>sed -i = vai trocar, mas não vai imprimir na tela</li>
+        <li>sed -e '/PADRAO/d' = ele vai deletar o que você quiser, mas como está -e ele só vai imprimir e não salva, para salvar é -i.</li>
+        <li>sed -e '/^$/d' = para excluir as pulas de linha</li>
+        <li>sed -e 's/nome\|name\|hombre/#######/' = ele vai trocar nome, name e hombre por #######</li>
+    </ul>
+
+<p>Cut</p>
+    <ul>
+        <li>cut -c 1,2,3 exemplo.txt (1,2,3 são colunas do texto que você está utilizando)</li>
+        <li>cut -c 1-3 exemplo.txt (1 a 3 são colunas do texto que você está utilizando)</li>
+        <li>d = delimitador</li>
+        <li>f = campo</li>
+        <li>exemplo: cut -d ',' -f '1,3' arquivo = (campo 1 e 3)</li>
+        <li>exemplo para salvar: cut -d ',' -f '3' arquivoorigem.txt > arquivodestino.txt</li>
+        <li>exemplo delimitador como espaço = cut -d ' ' -f '1,2' arquivoorigem.txt</li>
+        <li>exemplo de troca de delimitador = cut -d ' ' -f '1,2' --output-delimiter=',' arquivoorigem.txt (troca o delimitador por vírgula)</li>
+    </ul>
+
+<p>Vim:</p>
+    <ul>
+        <li>dd = delete (no modo leitura)</li>
+        <li>i = inserção = para inserir texto</li>
+        <li>ESC = sai do modo inserção</li>
+        <li>: = modo comando</li>
+        <li>w = salva o que foi alterado</li>
+        <li>q! = força ao editor sair sem salvar.</li>
+        <li>q = quit</li>
+        <li>syntax on = deixa com cores os textos</li>
+        <li>set number = coloca números nas linhas</li>
+    </ul>
+</p>
+
+<!--FINAL DO COMANDOS PARA ARQUIVOS-->
+</section>
+<!-- FINAL COMANDOS HELP -->
+
+
+    
+<!-- Entendo Permissões do linux -->
+<section id="permissao-linux" class="permissao-linux">
+<h1>ENTENDENDO AS PERMISSÕES DO LINUX</h1>
+<p>primeiras letras mostram o tipo de arquivo.</p>
+<p class="pconf">Se for d é diretorio.</p>
+<p class="pconf">Se for - é um arquivo normal.</p>
+<p class="pconf">Se for l é um link simbolico.</p>
+<p class="pconf">Se for c é um arquivo especial</p>
+<p class="pconf">Se for b é um arquivo de bloco</p>
+<p class="pconf">Se for s é um arquivo socket</p>
+
+<p class="pconf1">R = read ou seja leitura, vale 4</p>
+<p class="pconf">W = write ou seja escrita, vale 2</p>
+<p class="pconf">x = execução, vale 1</p>
+<p class="pconf2">sem permissão, vale 0</p>
+
+<p class="pconf">As permissões são divididas em três gurpos:</p>
+<p class="pconf">Dono/proprietario - Grupo e Outros.</p>
+<p class="pconf">exemplo: -rwxr-xr-x (aqui o arquivo é normal, a permissão do dono é de escrita, leitura e execução)</p>
+
+<p>CHMOD DANDO PERMISSÕES</p>
+<p class="pconf">chmod = change mod ou ajustar a permissão</p>
+<p class="pconf">o numero 7 dá permissão de tudo, porque é a soma de 4+2+1 ou seja r+w+x = 7.</p>
+<p class="pconf">exemplo: chmod 777 arquivo, ele dá permissão para o dono, grupo e outros.</p>
+<p class="pconf">outro exemplo: chmod 700 arquivo, ele dá permissão de tudo (r,w e x) para o dono. outros e grupo ficam sem nenhuma permissão</p>
+<p class="pconf">outro exemplo: chmod 444 arquivo, aqui ele dá permissão só de escrita para todo mundo.</p>
+<p class="pconf">outro exemplo: chmod -r 400 diretorio/outroarquivo, aqui ele dá permissão só de escrita somente para o dono, o resto fica sem. E faz os outros arquivos dentro do diretorio tenham permissão de leitura do dono</p>
+</section>
+<!-- FINAL - Entendo Permissões do linux -->
+
+
+
+<!-- REDES - INFORMAÇÕES -->
+<section id="redes" class="redes">
+<h1>REDES</h1>
+<p class="pconf">COMO MUDAR O IP PARA ESTATICO</p>
+<p class="pconf">primeiro acesse esse arquivo de configuração:: sudo nano /etc/network/interfaces</p>
+<p class="pconf">iface eth0 inet static</p>
+<p class="pconf">address SEU_IP_ESTÁTICO</p>
+<p class="pconf">netmask MÁSCARA_DE_REDE</p>
+<p class="pconf">gateway GATEWAY_PADRÃO</p>
+
+<p>Exemplo::</p>
+<p class="pconf">iface eth0 inet static</p>
+<p class="pconf">address 192.168.1.100</p>
+<p class="pconf">netmask 255.255.255.0</p>
+<p class="pconf">gateway 192.168.1.1</p>
+<p class="pconf">dns-nameservers 8.8.8.8 </p> 
+<cite>A opção do dns-nameservers, utilize somente se você tiver um dns confiável</cite><br>
+<cite>Se não quiser reiniciar para já alterar as configurações de rede, pode dar:</cite><br>
+<code>sudo systemctl restart networking</code>
+<p>ETH0 PODE MUDAR DEPENDENDO DA SUA INTERFACE DE REDE, VERIFIQUE COM COMANDO 'IP ADDR' </p>
+</section>
+<!-- FINAL - REDES - INFORMAÇÕES -->
+
+
+
+<!-- SSH ACESSO REMOTO -->
+<section id="ssh" class="ssh">
+    <h1>ACESSO REMOTO SSH</h1>
+
+    <p><strong>CONFIGURANDO SSH</strong></p>
+    <p>SSH é a sigla para <strong>Secure Socket Shell</strong>, um protocolo de segurança para troca de arquivos entre cliente e servidor.</p>
+
+    <p><strong>Instalação</strong></p>
+    <p>Para instalar o SSH, execute os seguintes comandos:</p>
+    <code>apt-get install openssh-server && </code>
+    <code>apt-get install openssh-client</code>
+
+    <p><strong>CONEXÃO SSH</strong></p>
+    <p>Para se conectar via SSH, use o seguinte comando:</p>
+    <code>$ ssh usuario@ipdamaquina -p 278</code>
+    <p><strong>Nota:</strong> O <code>-p</code> é utilizado para definir a porta. Lembre-se de modificar a porta padrão 22 no arquivo <code>/etc/ssh/sshd_config</code> se necessário.</p>
+
+    <p><strong>TRANSFERÊNCIA DE ARQUIVOS</strong></p>
+    <p>O <strong>SCP</strong> (Secure Copy) é um protocolo de rede para transferências de arquivos. Para transferir arquivos, use os seguintes comandos:</p>
+
+    <p><strong>Copiar um arquivo remoto para a máquina local:</strong></p>
+    <code>scp usuarioMaquinaRemota@ipDaMaquinaRemota:/home/diretorioRemoto/arquivo.txt /home/diretoriolocal/</code>
+
+    <p><strong>Enviar um arquivo local para um servidor remoto:</strong></p>
+    <code>scp /home/diretorioLocal/arquivo.txt user@ipDaMaquinaRemota:/home/diretorioRemoto/arquivo.txt</code>
+
+    <p><strong>Exemplo:</strong></p>
+    <code>scp -r /home/marcelo/Downloads/nethunter.tar.gz celoezra@192.168.1.14:/home/celoezra/Downloads/nome-do-arquivo.sua-extensão</code>
+    <p><strong>Nota:</strong> Execute este comando no computador local. Marcelo é o usuário local e Celoezra é o remoto.</p>
+
+    <p><strong>Copiar pastas e subpastas do servidor remoto para a máquina local:</strong></p>
+    <code>scp -r usuarioMaquinaRemota@ipDaMaquinaRemota:/home/diretorioRemoto/pasta/ /home/diretorioLocal/</code>
+
+    <p><strong>Enviar pastas e subpastas da máquina local para o servidor remoto:</strong></p>
+    <code>scp -r /home/diretorioLocal/pasta/ usuarioMaquinaRemota@ipDaMaquinaRemota:/pasta/</code>
+</section>
+<!-- FINAL DO SSH -->
+
+
+
+<!-- SAMBA -->
+<section id="samba" class="samba">
+<h1>SAMBA INSTALAÇÃO E CONFIGURAÇÃO</h1>
+<code>apt-get install samba</code>
+<p>configuração do arquivo samba > /etc/samba/smb.conf</p>
+<p class="pcinza">[global]</p>
+<p class="pcinza">workgroup = cosmos</p>
+<p class="pcinza">server string = neturno</p>
+<p class="pcinza">server role = standalone server</p>
+<p class="pcinza">passdb backend = smbpasswd</p>
+<p class="pcinza">security = user</p>
+<p class="pcinza">map to guest = bad user</p>
+
+<p class="pcinza2">[arquivos]</p>
+<p class="pcinza">path = /home/share</p>
+<p class="pcinza">guest ok = yes</p>
+<p class="pcinza">read only = no</p>
+<p class="pcinza">comment = MY Files</p>
+<p class="pcinza">public = yes</p>
+<p class="pcinza">create mask = 0700</p>
+<p class="pcinza">directory mask = 0700</p>
+<p class="pcinza">rowseable = yes</p>
+<p class="pcinza">writable = yes</p>
+<p class="pcinza">printable = no </p>
+<p class="pcinza">create mode = 0777</p>
+<p class="pcinza3">directory mode = 0777</p>
+
+<p>configuração do arquivo samba > /etc/samba/smb.conf</p>
+<pre><code>
+[global]
+workgroup = cosmos
+server string = neturno
+server role = standalone server
+passdb backend = smbpassw
+security = user
+map to guest = bad user
+</code></pre>
+<code><pre>
+[arquivos]
+path = /home/share
+guest ok = yes
+read only = no
+comment = MY Files
+public = yes
+create mask = 0700
+directory mask = 0700
+rowseable = yes
+writable = yes
+printable = no 
+create mode = 0777
+directory mode = 0777
+</code></pre>
+
+<cite>Para conseguir editar via computador-cliete precisa fazer isso com a pasta chefe</cite><br>
+<code>chmod u=rwx /pasta/chefe</code><br>
+<code>chmod g=rwx /pasta/chefe</code><br>
+<code>chmod o=rwx /pasta/chefe</code><br>
+</section>
+<!-- FINAL SAMBA -->
+
+
+
+<!--GERENCIADOR DE PACOTES-->
+<section id="gerenciador-pacotes" class="gerenciador-pacotes">
+<h1>GERENCIADORES DE PACOTES</h1>
+<p><strong>TIPOS DE GERENCIADORES.</strong></p>
+
+<p><strong>BAIXO NÍVEL</strong></p>
+
+<p>DPKG é um gerenciador de pacotes de baixo nível?</p>
+<p>Sim, o dpkg é geralmente considerado um gerenciador de pacotes de baixo nível no contexto do sistema operacional Linux. O dpkg é um software de linha de comando que é utilizado para instalar, remover e gerenciar pacotes de software no Debian e em seus derivados, como o Ubuntu.</p>
+<p>O dpkg é responsável por executar operações de baixo nível para gerenciar os pacotes de software, como instalar e desinstalar arquivos de pacotes, configurar os scripts de pré e pós-instalação e verificar as dependências do software. Ele é o gerenciador de pacotes primário utilizado no Debian e em suas variantes e é utilizado como base para outros gerenciadores de pacotes de alto nível, como o APT.</p>
+<p>No entanto, é importante lembrar que, embora o dpkg seja considerado um gerenciador de pacotes de baixo nível, ele ainda está em um nível de abstração mais alto do que o kernel Linux, que é o gerenciador de baixo nível que controla diretamente o hardware do sistema.</p>
+<p><strong>Porque o dpkg é considerado um pacote de baixo nível?</strong></p>
+<p>O dpkg é considerado um gerenciador de pacotes de baixo nível por algumas razões, como:</p>
+<ul>
+    <li>Interação direta com os arquivos de pacotes: O dpkg é responsável por manipular diretamente os arquivos de pacotes, instalando, removendo ou atualizando pacotes de software no sistema. Isso significa que ele é capaz de executar operações de baixo nível, como extrair e instalar arquivos diretamente nos locais adequados do sistema de arquivos.</li>
+    <li>Funcionamento em linha de comando: O dpkg é um software executado a partir da linha de comando, sem interface gráfica. Isso requer do usuário conhecimentos técnicos para utilizá-lo, o que o torna mais adequado para usuários avançados ou administradores de sistemas.</li>
+    <li>Controle de dependências de forma direta: O dpkg é responsável por gerenciar as dependências do software de forma direta, sem utilizar ferramentas de gerenciamento de dependências de mais alto nível, como o APT. Isso significa que ele precisa ser capaz de determinar manualmente as dependências e resolver os conflitos entre elas.</li>
+</ul>
+<p>No entanto, vale lembrar que o dpkg não é o único gerenciador de pacotes utilizado no sistema operacional Linux, e nem sempre é o mais adequado para todas as situações. Existem outros gerenciadores de pacotes de alto nível, como o APT, que fornecem recursos mais avançados de gerenciamento de dependências, instalação de pacotes em massa e atualização automática de software.</p>
+
+<p><strong>ALTO NÍVEL</strong></p>
+
+<p>O que é um Gerenciador de Pacotes de alto nível?</p>
+<p>Na verdade, o termo "gerenciador de pacotes de baixo nível" não é muito comum no contexto do Linux. Normalmente, quando se fala em gerenciador de pacotes no Linux, está se referindo a um software que é responsável por gerenciar a instalação, atualização e remoção de pacotes de software em um sistema operacional Linux.</p>
+<p>Esses gerenciadores de pacotes são uma parte essencial do ecossistema do Linux e facilitam muito a vida dos usuários e administradores do sistema, pois permitem instalar e manter o software de forma simples e organizada, além de garantir que as dependências do software sejam gerenciadas corretamente.</p>
+<p>Alguns exemplos de gerenciadores de pacotes de alto nível no Linux são o APT (Advanced Package Tool), utilizado no Debian e derivados, o DNF (Dandified YUM), utilizado no Fedora e derivados, e o Pacman, utilizado no Arch Linux.</p>
+
+<cite>EXEMPLOS DE GERENCIADOR DE ALTO NÍVEL</cite>
+
+<p><strong>APT:</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>apt-get update: atualiza o índice de pacotes disponíveis nos repositórios configurados.</li>
+    <li>apt-get upgrade: atualiza todos os pacotes instalados no sistema para a versão mais recente disponível.</li>
+    <li>apt-get install [pacote]: instala um pacote específico. Por exemplo, "apt-get install firefox" instalaria o navegador Firefox.</li>
+    <li>apt-get remove [pacote]: remove um pacote específico e suas dependências não utilizadas. Por exemplo, "apt-get remove firefox" removeria o Firefox e todas as dependências que não são usadas por outros pacotes.</li>
+    <li>apt-get autoremove: remove automaticamente todos os pacotes não utilizados que foram instalados como dependências de outros pacotes.</li>
+    <li>apt-get clean: limpa o cache dos pacotes baixados anteriormente do repositório.</li>
+    <li>apt-cache search [pacote]: pesquisa o repositório de pacotes em busca de um pacote específico. Por exemplo, "apt-cache search firefox" retornaria uma lista de pacotes relacionados ao Firefox.</li>
+    <li>apt-cache show [pacote]: exibe informações detalhadas sobre um pacote específico, incluindo a versão, data de lançamento e informações sobre dependências.</li>
+    <li>apt-get dist-upgrade: atualiza todos os pacotes instalados no sistema, incluindo suas dependências, para a versão mais recente disponível e também pode instalar ou remover pacotes adicionais, se necessário.</li>
+</ul>
+<p>Esses são apenas alguns dos comandos mais comuns do APT. Para obter mais informações sobre o gerenciador de pacotes APT, você pode consultar a documentação oficial do Debian ou do Ubuntu.</p>
+
+<p><strong>DNF</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>dnf search [pacote]: pesquisa o repositório de pacotes em busca de um pacote específico. Por exemplo, "dnf search firefox" retorna uma lista de pacotes relacionados ao Firefox.</li>
+    <li>dnf install [pacote]: instala um pacote específico. Por exemplo, "dnf install firefox" instalaria o navegador Firefox.</li>
+    <li>dnf update: atualiza todos os pacotes instalados no sistema para a versão mais recente.</li>
+    <li>dnf remove [pacote]: remove um pacote específico e suas dependências não utilizadas. Por exemplo, "dnf remove firefox" removeria o Firefox e todas as dependências que não são usadas por outros pacotes.</li>
+    <li>dnf list: lista todos os pacotes instalados no sistema.</li>
+    <li>dnf history: exibe um registro de todas as operações de instalação, atualização e remoção de pacotes.</li>
+    <li>dnf info [pacote]: exibe informações detalhadas sobre um pacote específico, incluindo a versão, data de lançamento e informações sobre dependências.</li>
+    <li>dnf upgrade: atualiza todos os pacotes instalados no sistema, incluindo suas dependências.</li>
+    <li>dnf repoquery: pesquisa o repositório de pacotes em busca de pacotes que atendam a determinados critérios.</li>
+</ul>
+
+<p><strong>YUM</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>yum search [pacote]: pesquisa o repositório de pacotes em busca de um pacote específico. Por exemplo, "yum search firefox" retorna uma lista de pacotes relacionados ao Firefox.</li>
+    <li>yum install [pacote]: instala um pacote específico. Por exemplo, "yum install firefox" instalaria o navegador Firefox.</li>
+    <li>yum update: atualiza todos os pacotes instalados no sistema para a versão mais recente.</li>
+    <li>yum remove [pacote]: remove um pacote específico e suas dependências não utilizadas. Por exemplo, "yum remove firefox" removeria o Firefox e todas as dependências que não são usadas por outros pacotes.</li>
+    <li>yum list: lista todos os pacotes instalados no sistema.</li>
+    <li>yum info [pacote]: exibe informações detalhadas sobre um pacote específico, incluindo a versão, data de lançamento e informações sobre dependências.</li>
+    <li>yum upgrade: atualiza todos os pacotes instalados no sistema, incluindo suas dependências.</li>
+    <li>yum history: exibe um registro de todas as operações de instalação, atualização e remoção de pacotes.</li>
+    <li>yum deplist [pacote]: lista todas as dependências de um pacote específico.</li>
+</ul>
+<p>Esses são apenas alguns dos comandos mais comuns do Yum. Para obter mais informações sobre o gerenciador de pacotes Yum, você pode consultar a documentação oficial do Red Hat ou do CentOS.</p>
+
+<p><strong>SNAP</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>snap find [pacote]: pesquisa o repositório de pacotes do Snap em busca de um pacote específico. Por exemplo, "snap find firefox" retorna uma lista de snaps relacionados ao Firefox.</li>
+    <li>snap install [pacote]: instala um pacote específico. Por exemplo, "snap install firefox" instalaria o navegador Firefox.</li>
+    <li>snap refresh [pacote]: atualiza um pacote específico para a versão mais recente disponível.</li>
+    <li>snap list: lista todos os pacotes Snap instalados no sistema.</li>
+    <li>snap remove [pacote]: remove um pacote específico e seus dados do sistema. Por exemplo, "snap remove firefox" removeria o Firefox e todos os seus dados.</li>
+    <li>snap revert [pacote]: reverte um pacote específico para a versão anterior.</li>
+    <li>snap changes: lista as alterações recentes feitas em snaps instalados no sistema.</li>
+    <li>snap info [pacote]: exibe informações detalhadas sobre um pacote Snap, incluindo a versão, a data de lançamento e o tamanho.</li>
+    <li>snap alias [pacote]: cria um alias para um pacote Snap. Por exemplo, "snap alias firefox firefox-beta" criaria um alias "firefox-beta" para o pacote Firefox.</li>
+</ul>
+
+<p><strong>PACMAN</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>pacman -S [pacote]: instala um pacote específico. Por exemplo, "pacman -S firefox" instalaria o navegador Firefox.</li>
+    <li>pacman -Syu: atualiza todos os pacotes instalados no sistema, incluindo suas dependências.</li>
+    <li>pacman -Q: lista todos os pacotes instalados no sistema.</li>
+    <li>pacman -R [pacote]: remove um pacote específico e suas dependências não utilizadas. Por exemplo, "pacman -R firefox" removeria o Firefox e todas as dependências que não são usadas por outros pacotes.</li>
+    <li>pacman -Ss [palavra-chave]: pesquisa o repositório de pacotes em busca de um pacote que contenha a palavra-chave. Por exemplo, "pacman -Ss editor" retorna uma lista de editores de texto disponíveis para instalação.</li>
+    <li>pacman -Sw [pacote]: baixa um pacote do repositório, mas não o instala. Por exemplo, "pacman -Sw firefox" baixa o pacote do Firefox para que possa ser instalado mais tarde.</li>
+    <li>pacman -Sc: limpa o cache do Pacman, removendo os pacotes antigos que já foram instalados ou baixados.</li>
+    <li>pacman -Qdt: lista pacotes órfãos, ou seja, pacotes que foram instalados como dependências, mas que não são mais necessários por nenhum outro pacote.</li>
+    <li>pacman -Qii [pacote]: exibe informações detalhadas sobre um pacote instalado, incluindo seus arquivos e dependências.</li>
+</ul>
+</section>
+<!--FINAL GERENCIADOR DE PACOTES-->
+
+
+
+<!--FILESYSTEM-->
+<section id="filesystem" class="filesystem">
+    <h1>Representação sobre as pastas no Linux:</h1>
+    <p>No Linux, o sistema de arquivos é organizado hierarquicamente e segue um padrão chamado "Filesystem Hierarchy Standard" (FHS), que define a estrutura das pastas e diretórios do sistema. Aqui estão algumas das pastas mais importantes no sistema de arquivos do Linux:</p>
+
+    <p>/ (raiz): É o diretório raiz do sistema de arquivos. Todas as pastas e arquivos estão contidos dentro desta pasta.</p>
+
+    <p>/bin: Contém arquivos executáveis essenciais para o funcionamento do sistema. Aqui estão localizados comandos básicos do sistema, como ls (listar arquivos), cp (copiar arquivos) e mv (mover arquivos).</p>
+
+    <p>/boot: Contém arquivos relacionados ao processo de inicialização (boot) do sistema, como o kernel do Linux, imagens de inicialização e configurações do bootloader, como o GRUB.</p>
+
+    <p>/dev: É o diretório que contém arquivos especiais que representam dispositivos de hardware. Por exemplo, /dev/sda representa o primeiro disco rígido, /dev/tty representa um terminal de texto, e assim por diante.</p>
+
+    <p>/etc: Contém arquivos de configuração do sistema. Aqui você encontrará arquivos de configuração para diversos aspectos do sistema, como redes, serviços, usuários, permissões e outros.</p>
+
+    <p>/home: É o diretório onde os diretórios pessoais dos usuários são criados. Cada usuário do sistema terá uma pasta dentro de /home para armazenar seus arquivos pessoais.</p>
+
+    <p>/lib e /lib64: Contêm bibliotecas compartilhadas (arquivos .so) que são usadas por programas em execução no sistema.</p>
+
+    <p>/media e /mnt: São diretórios onde dispositivos de armazenamento removíveis, como pendrives e discos externos, podem ser montados. /media é usado para montagens automáticas, enquanto /mnt é geralmente usado para montagens temporárias.</p>
+
+    <p>/opt: É um diretório destinado a pacotes de software adicionais instalados pelo usuário ou por aplicativos de terceiros. Geralmente, os programas instalados em /opt têm sua própria estrutura interna de diretórios.</p>
+
+    <p>/srv: É um diretório destinado a dados de serviço específicos do sistema, como arquivos de dados de sites da web, repositórios de dados para servidores FTP, entre outros.</p>
+
+    <p>/tmp: É um diretório temporário onde os aplicativos podem criar arquivos temporários durante a execução. Esses arquivos são excluídos automaticamente quando o sistema é reiniciado.</p>
+
+    <p>Essas são apenas algumas das pastas principais no sistema de arquivos do Linux. É importante ressaltar que diferentes distribuições Linux podem ter pequenas variações na estrutura de diretórios, mas em geral, a estrutura básica é semelhante.</p>
+
+    <p class="titulo-central">Diferença entre BTRFS e EXT4</p>
+
+    <p>O ext4 (Fourth Extended File System) e o Btrfs (B-tree File System) são sistemas de arquivos para sistemas operacionais baseados em Linux, e eles possuem algumas diferenças significativas em termos de recursos e design. Vamos abordar algumas das principais diferenças entre o ext4 e o Btrfs:</p>
+
+    <p><strong>Gerenciamento de Espaço:</strong></p>
+    <p>ext4: Usa uma abordagem tradicional de alocação de espaço, onde os blocos são alocados para arquivos de forma contígua.</p>
+    <p>Btrfs: Utiliza uma árvore B para gerenciar a alocação de blocos, permitindo snapshots, cópias rápidas e alocação dinâmica de espaço.</p>
+
+    <p><strong>Snapshots:</strong></p>
+    <p>ext4: Não tem suporte nativo para snapshots. Snapshots são cópias instantâneas do sistema de arquivos em um determinado ponto no tempo.</p>
+    <p>Btrfs: Oferece suporte nativo para snapshots, o que permite criar instantâneos eficientes do sistema de arquivos.</p>
+
+    <p><strong>Recuperação de Erros:</strong></p>
+    <p>ext4: Possui ferramentas tradicionais de verificação e correção de erros, como o e2fsck.</p>
+    <p>Btrfs: Inclui funcionalidades de autoreparo, sendo capaz de corrigir alguns erros no sistema de arquivos automaticamente.</p>
+
+    <p><strong>Recuperação de Dados:</strong></p>
+    <p>ext4: A recuperação de dados pode ser mais desafiadora em comparação com o Btrfs em alguns casos.</p>
+    <p>Btrfs: Oferece melhores recursos de recuperação de dados, especialmente devido à capacidade de realizar verificações e correções automáticas.</p>
+
+    <p><strong>Checksums e Integridade de Dados:</strong></p>
+    <p>ext4: Não possui verificação de integridade de dados embutida.</p>
+    <p>Btrfs: Usa checksums para dados e metadados, ajudando a detectar corrupção de dados.</p>
+
+    <p><strong>Manutenção e Administração:</strong></p>
+    <p>ext4: Mais estabelecido e amplamente utilizado, com ferramentas maduras de administração.</p>
+    <p>Btrfs: Embora tenha amadurecido ao longo do tempo, pode ser visto como mais avançado e pode exigir mais conhecimento técnico para administrar efetivamente.</p>
+
+    <p><strong>Compatibilidade:</strong></p>
+    <p>ext4: Amplamente suportado e pode ser uma escolha mais conservadora para a compatibilidade com sistemas mais antigos ou ambientes mais tradicionais.</p>
+    <p>Btrfs: Embora bem suportado, pode não ser a melhor escolha em todos os casos, dependendo dos requisitos específicos do sistema.</p>
+
+    <p>A escolha entre ext4 e Btrfs depende das necessidades específicas do sistema, do nível de familiaridade do administrador com cada sistema de arquivos e dos recursos desejados, como snapshots, recuperação de erros avançada e alocação dinâmica de espaço.</p>
+</section>
+<!--FINAL FILESYSTEM-->
+
+
+<section id="xorg" class="xorg">
+    <h1>O que é o Xorg no Linux?</h1>
+  
+    <p>O <strong>Xorg</strong> é o <strong>servidor gráfico</strong> mais usado no Linux e em sistemas Unix-like (como BSD). Ele faz parte do <strong>sistema X Window</strong>, que permite o uso de interfaces gráficas no sistema. O Xorg atua como uma ponte entre o <strong>hardware gráfico</strong> (placa de vídeo) e as <strong>aplicações gráficas</strong> (navegadores, editores, etc.).</p>
+  
+    <h1>Principais Funções do Xorg:</h1>
+  
+    <ol>
+      <li><strong>Servidor de Exibição</strong>: O Xorg recebe comandos gráficos das aplicações e exibe na tela. Ele também captura eventos de entrada (teclado, mouse) e os repassa para os programas.</li>
+      
+      <li><strong>Configuração</strong>: As configurações do Xorg são ajustadas automaticamente, mas você pode modificar manualmente através do arquivo de configuração <code>/etc/X11/xorg.conf</code>.</li>
+      
+      <li><strong>Drivers Gráficos</strong>: O Xorg precisa de <strong>drivers</strong> para comunicar-se com a placa de vídeo. Exemplos incluem drivers da <strong>NVIDIA</strong>, <strong>AMD</strong> e <strong>Intel</strong>.</li>
+      
+      <li><strong>Compositores</strong>: Programas como <strong>Compton</strong> ou <strong>Picom</strong> podem ser usados com o Xorg para melhorar a suavidade da exibição e evitar problemas de rasgamento na tela.</li>
+      
+      <li><strong>Protocolo X11</strong>: O Xorg usa o protocolo <strong>X11</strong> para comunicação entre as aplicações e o servidor gráfico.</li>
+      
+      <li><strong>Personalização</strong>: O Xorg permite usar diferentes <strong>gerenciadores de janelas</strong> ou <strong>ambientes de desktop</strong> como <strong>KDE</strong>, <strong>GNOME</strong>, <strong>i3wm</strong>, etc.</li>
+      
+      <li><strong>Problemas Comuns</strong>: Falhas gráficas, como problemas com múltiplos monitores ou artefatos visuais, geralmente são causados por erros nas configurações do Xorg ou conflitos de drivers.</li>
+      
+      <li><strong>Wayland</strong>: O <strong>Wayland</strong> está substituindo o Xorg em algumas distribuições por ser mais moderno e eficiente, mas o Xorg ainda é amplamente utilizado.</li>
+    </ol>
+  
+    <p>Em resumo, o <strong>Xorg</strong> é o software que permite que você veja e interaja com a interface gráfica no Linux, conectando os programas gráficos ao hardware do seu sistema.</p>
+    
+    <h1>CONFIG DO XORG.CONF.D - DELL G15 -PLACA NVIDIA E INTEL (DESATUALIZADO- MODO ANTIGO)</h1>
+
+
+    <h3>Configuração Intel (30-intel.conf)</h3>
+  
+    <pre><code>
+  Section "Monitor"  # Seção para configuração do monitor do notebook
+      Identifier     "Monitor1"  # Nome único para o monitor do notebook
+      VendorName     "Unknown"  # Nome do fabricante (desconhecido)
+      ModelName      "Notebook Display"  # Nome do modelo do monitor
+      HorizSync      30.0 - 150.0  # Frequências horizontais suportadas
+      VertRefresh    40.0 - 120.0  # Frequências verticais suportadas
+      Option         "DPMS"  # Ativa o gerenciamento de energia para o monitor
+  EndSection
+  
+  Section "Screen"  # Seção para configuração da tela do notebook
+      Identifier     "Screen1"  # Nome único para a tela do notebook
+      Device         "intel"  # Associa a tela à GPU Intel
+      Monitor        "Monitor1"  # Usa a configuração do monitor do notebook
+  EndSection
+  
+  Section "Device"  # Seção para configuração da GPU Intel
+      Identifier     "intel"  # Nome único para a GPU Intel
+      Driver         "modesetting"  # Usa o driver de modos de configuração
+      Option         "TearFree" "true"  # Habilita opção para evitar screen tearing
+      BusID          "PCI:0:2:0"  # Identificador do barramento PCI da GPU
+  EndSection
+    </code></pre>
+ 
+
+        <h3>Configuração NVIDIA (20-nvidia.conf)</h3>
+      
+        <pre><code>
+      Section "ServerLayout"  # Seção que define o layout do servidor X
+          Identifier     "layout"  # Nome único para esse layout
+          Screen      0  "Screen0" 0 0  # Define a tela primária "Screen0" na posição (0,0)
+          InputDevice    "Keyboard0" "CoreKeyboard"  # Define o teclado como dispositivo de entrada
+          InputDevice    "Mouse0" "CorePointer"  # Define o mouse como dispositivo de entrada
+          Option         "Xinerama" "0"  # Desativa o Xinerama, que permite múltiplos monitores como um único
+      EndSection
+      
+      Section "InputDevice"  # Seção para configuração do teclado
+          Identifier     "Keyboard0"  # Nome único para o teclado
+          Driver         "kbd"  # Usa o driver padrão para teclado
+      EndSection
+      
+      Section "InputDevice"  # Seção para configuração do mouse
+          Identifier     "Mouse0"  # Nome único para o mouse
+          Driver         "mouse"  # Usa o driver padrão para mouse
+          Option         "Protocol" "auto"  # Protocolo de comunicação automático
+          Option         "Device" "/dev/psaux"  # Dispositivo do mouse
+          Option         "Emulate3Buttons" "no"  # Desativa a emulação de três botões
+          Option         "ZAxisMapping" "4 5"  # Configura a roda de rolagem
+      EndSection
+      
+      Section "Monitor"  # Seção para configuração do monitor
+          Identifier     "Monitor0"  # Nome único para o monitor
+          VendorName     "Unknown"  # Nome do fabricante (desconhecido)
+          ModelName      "Samsung Odyssey G30B"  # Nome do modelo do monitor
+          HorizSync      30.0 - 170.0  # Frequências horizontais suportadas
+          VertRefresh    60.0 - 144.0  # Frequências verticais suportadas
+          Option         "DPMS"  # Ativa o gerenciamento de energia para o monitor
+      EndSection
+      
+      # Configuração da GPU NVIDIA
+      Section "Device"
+          Identifier     "DeviceNvidia"
+          Driver         "nvidia"
+          VendorName     "NVIDIA Corporation"
+          BoardName      "NVIDIA GeForce RTX 3050 6GB Laptop GPU"
+          Option "AllowEmptyInitialConfiguration"
+          Option "Coolbits" "28"
+          Option "TripleBuffer" "on"
+          Option "ForceFullCompositionPipeline" "on"
+      EndSection
+      
+      # Configuração da tela NVIDIA (Screen1)
+      Section "Screen"
+          Identifier     "Screen0"
+          Device         "DeviceNvidia"
+          DefaultDepth   24
+          Option         "Stereo" "0"
+          Option         "nvidiaXineramaInfoOrder" "HDMI-1-0"
+          Option         "metamodes" "1920x1080_144 +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On, VSync=On}"
+          Option         "SLI" "Off"
+          Option         "MultiGPU" "Off"
+          Option         "BaseMosaic" "off"
+          SubSection     "Display"
+              Depth       24
+          EndSubSection
+      EndSection
+        </code></pre>
+</section>
+
+
+</body>
+</html>

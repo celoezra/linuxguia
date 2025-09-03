@@ -1,0 +1,71 @@
+/* PÁGINA GERAL */
+html, body {
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Tamanho de fonte padrão */
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Garante que o body não ultrapasse a tela */
+    height: 100%; /* Garante que o body ocupe a altura total */
+    overflow-x: hidden; /* Oculta a rolagem horizontal */
+    background-color: rgb(0, 113, 179);
+    box-sizing: border-box; /* Inclui padding e borda nas dimensões */
+  }
+  
+    /* Modo escuro - menu */
+  [data-theme="dark"] nav {
+    background-color: #333333;
+    border-bottom: 1px solid #444444;
+  }
+  
+  /* MENU */
+  nav {
+    position: fixed; /* Fixar o elemento no topo */
+    position: sticky; /* Fixar o elemento no topo */
+    top: 0; /* Alinhar ao topo da página */
+    left: 0; /* Alinhar à esquerda da página */
+    width: 100%; /* Largura total da página */
+    background-color: #000000; /* Cor de fundo */
+    border-bottom: 1px solid rgb(0, 113, 179); /* Linha de separação opcional
+    border-bottom: 1px solid rgb(0, 44, 0); /* Linha de separação opcional */
+    padding: 8px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e borda nas dimensões */
+    z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
+  }
+  
+  nav a {
+    padding: 8px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; /* Corrigido para 'bold' */
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Suaviza a transição */
+    line-height: 1.2;
+    white-space: nowrap; /* Evita quebra de linha nos itens do menu */
+  }
+  
+  nav a:hover {
+    text-align: center;
+    background-color: #2daf05;
+    color: #000000;
+  }
+  
+
+  
+  ul, li {
+    color: white;
+  }
+  
+  /*BOTÃO DE ALTERNAR TEMA*/
+  .bn62 {
+    color: #1cc49d;
+    background-color: #1b2f31;
+    border-radius: 50px;
+    margin: left;
+    padding: 10px;
+    height: 40px;
+    width: 140px;
+    font-size: small;
+    font-weight: 20;
+  }
+  

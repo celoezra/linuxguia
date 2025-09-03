@@ -1,0 +1,101 @@
+/* ------------------------------
+   TÍTULOS PRINCIPAIS (h1, h2, h3)
+   ------------------------------ */
+
+/* h1: Título principal da página ou seção */
+h1 {
+  margin-top: 50px;         /* Espaçamento superior em relação ao elemento anterior */
+  color: white;             /* Cor do texto */
+  text-align: center;       /* Centraliza horizontalmente */
+}
+
+/* h2: Subtítulos ou divisões de seção */
+h2 {
+  margin-top: 100px;        /* Espaço maior para destacar a hierarquia */
+  color: white;
+  text-align: center;
+}
+
+/* h3: Sub-subtítulos ou tópicos internos */
+h3 {
+  margin-top: 100px;
+  color: white;
+  text-align: center;
+}
+
+
+/* ------------------------------
+   PARÁGRAFOS E VARIAÇÕES (.pconf)
+   ------------------------------ */
+
+/* Parágrafos padrão */
+p {
+  color: white;
+  margin-top: 1.5em;        /* Espaço superior padrão */
+  margin-bottom: 1em;       /* Espaço inferior padrão */
+}
+
+/* .pconf → versões de parágrafos em branco usadas para explicações,
+   com espaçamentos específicos entre blocos */
+.pconf, .pconf1, .pconf2 {
+  color: white;
+}
+
+.pconf {
+  margin-top: 5px;          /* Espaçamento mínimo acima */
+  margin-bottom: 5px;       /* Espaçamento mínimo abaixo */
+}
+
+.pconf1 {
+  margin-top: 15px;         /* Espaço maior acima */
+  margin-bottom: 5px;
+}
+
+.pconf2 {
+  margin-top: 5px;
+  margin-bottom: 30px;      /* Espaço maior abaixo */
+}
+
+
+/* ------------------------------
+   TEXTO CINZA (.pcinza)
+   ------------------------------ */
+
+/* .pcinza → texto em cinza, normalmente usado
+   para observações de configuração ou detalhes técnicos.
+   As variações mudam apenas o espaçamento vertical. */
+.pcinza, .pcinza2, .pcinza3 {
+  color: rgb(109, 109, 109);
+}
+
+.pcinza {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pcinza2 {
+  margin-top: 20px;         /* Espaço extra acima */
+  margin-bottom: 0;
+}
+
+.pcinza3 {
+  margin-top: 0;
+  margin-bottom: 16px;      /* Espaço extra abaixo */
+}
+
+
+/* ------------------------------
+   MARCAÇÕES ESPECIAIS
+   ------------------------------ */
+
+/* <cite> → usado para observações, citações ou destaques */
+cite {
+  color: red;               /* Chama a atenção */
+  font-size: 20px;          /* Levemente maior que o padrão */
+}
+
+/* <code> → usado para trechos de código ou comandos */
+code {
+  color: rgb(37, 131, 0);   /* Verde, remetendo a terminal */
+  font-size: 16px;          /* Mantém legível */
+}
