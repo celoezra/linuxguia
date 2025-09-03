@@ -34,3 +34,7 @@ O objetivo é ajudar iniciantes e usuários intermediários a consultar rapidame
 1. Clone este repositório:
    ```bash
    git clone https://github.com/celoezra/linuxguia.git
+
+
+
+mudei isso, teste 1 2 3
