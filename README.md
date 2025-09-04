@@ -36,5 +36,3 @@ O objetivo é ajudar iniciantes e usuários intermediários a consultar rapidame
    git clone https://github.com/celoezra/linuxguia.git
 
 
-
-mudei isso, teste 1 2 3
