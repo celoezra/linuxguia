@@ -10,7 +10,7 @@ O objetivo é ajudar iniciantes e usuários intermediários a consultar rapidame
 - Este guia foi criado inicialmente para meu uso pessoal, servindo como referência rápida no dia a dia.
 - No entanto, nada impede que você também o utilize como fonte de estudo e prática.
 - Caso queira expandir ou adaptar o conteúdo, fique à vontade para criar seu próprio projeto a partir deste repositório ou até contribuir com melhorias.
-- Dúvidas, sugestões ou apenas para trocar ideias: entre em contato no Instagram @celoezra.
+- Dúvidas, sugestões ou apenas para trocar ideias: entre em contato no gmail celoezra@gmail.com
 
 ---
 
