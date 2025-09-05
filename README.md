@@ -5,6 +5,15 @@ O objetivo é ajudar iniciantes e usuários intermediários a consultar rapidame
 
 ---
 
+## 📝 Observação
+
+- Este guia foi criado inicialmente para meu uso pessoal, servindo como referência rápida no dia a dia.
+- No entanto, nada impede que você também o utilize como fonte de estudo e prática.
+- Caso queira expandir ou adaptar o conteúdo, fique à vontade para criar seu próprio projeto a partir deste repositório ou até contribuir com melhorias.
+- Dúvidas, sugestões ou apenas para trocar ideias: entre em contato no Instagram @celoezra.
+
+---
+
 ## 🚀 Funcionalidades
 
 - Lista organizada de comandos Linux mais usados
@@ -35,4 +44,8 @@ O objetivo é ajudar iniciantes e usuários intermediários a consultar rapidame
    ```bash
    git clone https://github.com/celoezra/linuxguia.git
 
+
+```
+Conhecimento deve ser compartilhado
+```
 
