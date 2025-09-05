@@ -113,7 +113,7 @@ nav .menu .bn62 {
 
 /* ===== HAMBÚRGUER (sempre visível) ===== */
 .hamburger {
-  display: inline-block;      /* <-- sempre visível, inclusive no desktop */
+  display: inline-block;      /* sempre visível, inclusive no desktop */
   position: relative;
   width: 40px;
   height: 40px;
@@ -148,8 +148,10 @@ nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate
   transition: opacity .25s ease;
   z-index: 900;
 }
-.backdrop[aria-hidden="false"] { display: block; }
-.backdrop[aria-hidden="false"] { opacity: 1; }
+.backdrop[aria-hidden="false"] { 
+  display: block; 
+  opacity: 1; 
+}
 
 /* ===== TIPOGRAFIA / RESPONSIVIDADE ===== */
 
@@ -168,6 +170,78 @@ nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate
   body { font-size: 18px; }
 }
 
-/* (Opcional) se você quiser mostrar o menu em linha no desktop além do hambúrguer,
-   você pode declarar um layout horizontal aqui e esconder a gaveta.
-   Mas como você pediu o hambúrguer também no desktop, mantivemos a gaveta para todos os tamanhos. */
+/* ====== SUBMENUS (Acordeão) ====== */
+.menu .has-sub { position: relative; }
+
+.menu .submenu-toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font: inherit;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color .25s ease, color .25s ease;
+}
+.menu .submenu-toggle:hover,
+.menu .submenu-toggle:focus-visible {
+  background: #2daf05;
+  color: #000;
+  outline: none;
+}
+
+.menu .submenu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa o texto da setinha */
+}
+
+.menu .submenu-toggle .caret {
+  width: 0; height: 0;
+  margin-left: 8px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid currentColor;
+  transition: transform .2s ease;
+}
+
+
+/* container do submenu (colapsado por padrão) */
+.menu .has-sub > .submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 12px; /* recuo à esquerda */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+  border-left: 1px dashed rgba(255,255,255,.2);
+}
+
+/* quando aberto */
+.menu .has-sub.open > .submenu {
+  max-height: 600px; /* valor suficiente p/ caber os itens (ajuste se precisar) */
+}
+
+/* gira a setinha quando aberto */
+.menu .has-sub.open > .submenu-toggle .caret {
+  transform: rotate(90deg);
+}
+
+/* links dentro do submenu */
+.menu .submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #fff;
+}
+.menu .submenu a:hover,
+.menu .submenu a:focus-visible {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  outline: none;
+}

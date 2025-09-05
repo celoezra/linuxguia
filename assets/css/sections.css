@@ -1,5 +1,5 @@
   /* Seções */
-  .comandos-df, .comandos-top, .comandos-help, .permissao-linux, .redes, .ssh, .samba, .gerenciador-pacotes, .filesystem, .xorg {
+  .comandos-df, .comandos-top, .comandos-help, .permissao-linux, .redes-basico, .ssh, .samba, .gerenciador-pacotes, .filesystem, .xorg {
     background-color: #070707; /* Cor de fundo */
     padding: 20px; /* Espaçamento interno */
     border-radius: 8px; /* Cantos arredondados (opcional) */
