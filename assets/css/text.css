@@ -99,3 +99,13 @@ code {
   color: rgb(37, 131, 0);   /* Verde, remetendo a terminal */
   font-size: 16px;          /* Mantém legível */
 }
+
+/* <pre> → usado para blocos de código maiores */
+pre {
+  background: #0b0f10;      /* fundo escuro para destacar */
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;         /* ativa rolagem horizontal se necessário */
+  white-space: pre;         /* mantém identação e não quebra linhas */
+  max-width: 100%;          /* impede estourar a tela */
+}
