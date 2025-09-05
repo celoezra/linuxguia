@@ -8,50 +8,96 @@
     <link rel = "stylesheet" href="assets/css/main.css"> <!--estilo geral-->
     <link rel = "stylesheet" href="assets/css/text.css"> <!--estilo de textos-->
     <link rel = "stylesheet" href="assets/css/sections.css"> <!--estilo de seções-->
-    <link rel = "stylesheet" href="assets/css/responsividade.css"> <!--responsividade de telas-->
     <link rel="shortcut icon" href="assets/imagem/favicon.png"> <!--icone do site-->
-  </head>
+         <!--Script para alternar o tema-->
+   
+
+        <!--Final do Script para alternar o tema--> 
+</head>
 <body>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const root = document.documentElement;
+  const themeBtn  = document.getElementById('theme-toggle');
 
-    <!-- Sumário -->
-    <nav>
-        <a href="#comandos-df">COMANDOS DF</a>
-        <a href="#comandos-top">COMANDOS TOP</a>
-        <a href="#comandos-help">COMANDOS TERMINAL</a>
-        <a href="#permissao-linux">PERMISSÕES DO LINUX</a>
-        <a href="#redes">REDES</a>
-        <a href="#ssh">SSH</a> 
-        <a href="#samba">SAMBA</a>
-        <a href="#gerenciador-pacotes">GERENCIADOR DE PACOTES</a>
-        <a href="#filesystem">FILESYSTEM</a>
-        <a href="#xorg">XORG</a>
-        
-        
-          <!-- Botão para alternar o tema -->
-        <button onclick="toggleTheme()" class="bn62">
-            Alternar Tema
-        </button>
-        </nav>
-  
-    <!--Final do Sumário-->
+  const nav      = document.querySelector('nav');
+  const btn      = document.querySelector('.hamburger');
+  const menu     = document.getElementById('menu');
+  const backdrop = document.querySelector('.backdrop');
 
-        <!--Script para alternar o tema-->
-        <script>
-            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-    
-            function toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                
-                if (currentTheme === 'dark') {
-                    document.documentElement.removeAttribute('data-theme'); // Muda para modo claro
-                    document.getElementById('theme-toggle').textContent = 'Alternar para Dark'; // Atualiza texto do botão
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'dark'); // Muda para modo escuro
-                    document.getElementById('theme-toggle').textContent = 'Alternar para Light'; // Atualiza texto do botão
-                }
-            }
-        </script>
-        <!--Final do Script para alternar o tema-->
+  /* ===== Tema ===== */
+  if (themeBtn) {
+    const setLabel = () => {
+      themeBtn.textContent =
+        root.getAttribute('data-theme') === 'dark'
+          ? 'Alternar para Light'
+          : 'Alternar para Dark';
+    };
+    setLabel();
+
+    themeBtn.addEventListener('click', () => {
+      const dark = root.getAttribute('data-theme') === 'dark';
+      if (dark) root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', 'dark');
+      setLabel();
+    });
+  }
+
+  /* ===== Menu ===== */
+  function openMenu() {
+    nav.setAttribute('data-open', '');
+    btn && btn.setAttribute('aria-expanded', 'true');
+    backdrop && backdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    nav.removeAttribute('data-open');
+    btn && btn.setAttribute('aria-expanded', 'false');
+    backdrop && backdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  function toggleMenu() {
+    nav.hasAttribute('data-open') ? closeMenu() : openMenu();
+  }
+
+  btn && btn.addEventListener('click', toggleMenu);
+  backdrop && backdrop.addEventListener('click', closeMenu);
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  menu && menu.addEventListener('click', (e) => {
+    if (e.target.closest('a')) closeMenu();
+  });
+});
+</script>
+
+
+
+    <nav aria-label="Menu principal">
+  <!-- Botão hambúrguer -->
+  <button class="hamburger" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+  </button>
+
+  <!-- Links do menu -->
+  <ul id="menu" class="menu" role="menubar">
+    <li role="none"><a role="menuitem" href="#comandos-df">COMANDOS DF</a></li>
+    <li role="none"><a role="menuitem" href="#comandos-top">COMANDOS TOP</a></li>
+    <li role="none"><a role="menuitem" href="#comandos-help">COMANDOS TERMINAL</a></li>
+    <li role="none"><a role="menuitem" href="#permissao-linux">PERMISSÕES DO LINUX</a></li>
+    <li role="none"><a role="menuitem" href="#redes">REDES</a></li>
+    <li role="none"><a role="menuitem" href="#ssh">SSH</a></li>
+    <li role="none"><a role="menuitem" href="#samba">SAMBA</a></li>
+    <li role="none"><a role="menuitem" href="#gerenciador-pacotes">GERENCIADOR DE PACOTES</a></li>
+    <li role="none"><a role="menuitem" href="#filesystem">FILESYSTEM</a></li>
+    <li role="none"><a role="menuitem" href="#xorg">XORG</a></li>
+  </ul>
+  <button class="bn62" id="theme-toggle" type="button">Alternar Tema</button>
+</nav>
+<div class="backdrop" aria-hidden="true"></div>
+
+
+
         
 <!-- COMANDOS DF -->
 <section id="comandos-df" class="comandos-df">

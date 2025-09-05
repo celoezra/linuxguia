@@ -1,71 +1,173 @@
 /* PÁGINA GERAL */
 html, body {
-    font-family: Arial, sans-serif;
-    font-size: 16px; /* Tamanho de fonte padrão */
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Garante que o body não ultrapasse a tela */
-    height: 100%; /* Garante que o body ocupe a altura total */
-    overflow-x: hidden; /* Oculta a rolagem horizontal */
-    background-color: rgb(0, 113, 179);
-    box-sizing: border-box; /* Inclui padding e borda nas dimensões */
-  }
-  
-    /* Modo escuro - menu */
-  [data-theme="dark"] nav {
-    background-color: #333333;
-    border-bottom: 1px solid #444444;
-  }
-  
-  /* MENU */
-  nav {
-    position: fixed; /* Fixar o elemento no topo */
-    position: sticky; /* Fixar o elemento no topo */
-    top: 0; /* Alinhar ao topo da página */
-    left: 0; /* Alinhar à esquerda da página */
-    width: 100%; /* Largura total da página */
-    background-color: #000000; /* Cor de fundo */
-    border-bottom: 1px solid rgb(0, 113, 179); /* Linha de separação opcional
-    border-bottom: 1px solid rgb(0, 44, 0); /* Linha de separação opcional */
-    padding: 8px; /* Espaçamento interno */
-    box-sizing: border-box; /* Inclui padding e borda nas dimensões */
-    z-index: 1000; /* Garantir que o menu fique acima de outros elementos */
-  }
-  
-  nav a {
-    padding: 8px;
-    color: #ffffff;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold; /* Corrigido para 'bold' */
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s; /* Suaviza a transição */
-    line-height: 1.2;
-    white-space: nowrap; /* Evita quebra de linha nos itens do menu */
-  }
-  
-  nav a:hover {
-    text-align: center;
-    background-color: #2daf05;
-    color: #000000;
-  }
-  
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Tamanho de fonte padrão */
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Garante que o body não ultrapasse a tela */
+  height: 100%; /* Garante que o body ocupe a altura total */
+  overflow-x: hidden; /* Oculta a rolagem horizontal */
+  background-color: rgb(0, 113, 179);
+  box-sizing: border-box; /* Inclui padding e borda nas dimensões */
+}
 
-  
-  ul, li {
-    color: white;
-  }
-  
-  /*BOTÃO DE ALTERNAR TEMA*/
-  .bn62 {
-    color: #1cc49d;
-    background-color: #1b2f31;
-    border-radius: 50px;
-    margin: left;
-    padding: 10px;
-    height: 40px;
-    width: 140px;
-    font-size: small;
-    font-weight: 20;
-  }
-  
+/* Modo escuro - menu */
+[data-theme="dark"] nav {
+  background-color: #333333;
+  border-bottom: 1px solid #444444;
+}
+
+/* MENU (barra superior) */
+nav {
+  position: sticky; /* fixa no topo ao rolar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  border-bottom: 1px solid rgb(0, 113, 179); /* Linha de separação */
+  padding: 8px 12px;
+  box-sizing: border-box;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* LINKS padrões (quando usados em linha) */
+nav a {
+  padding: 8px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+nav a:hover {
+  text-align: center;
+  background-color: #2daf05;
+  color: #000000;
+}
+
+ul, li { color: white; }
+
+/* BOTÃO DE ALTERNAR TEMA */
+.bn62 {
+  color: #1cc49d;
+  background-color: #1b2f31;
+  border-radius: 50px;
+  padding: 10px;
+  height: 40px;
+  width: 140px;
+  font-size: small;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== BASE DO MENU COLAPSÁVEL ===== */
+
+/* lista do menu como contêiner (vai virar gaveta) */
+nav .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  /* Gaveta lateral OFF por padrão (qualquer largura) */
+  position: fixed;
+  top: 56px;                 /* altura aproximada da navbar */
+  right: 0;
+  bottom: 0;
+
+  /* largura adaptativa pra desktop e mobile */
+  width: clamp(280px, 30vw, 380px);
+
+  background: #000;
+  border-left: 1px solid rgb(0,113,179);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+
+  transform: translateX(100%);
+  transition: transform .25s ease;
+  padding: 12px;
+  z-index: 1001;
+}
+
+/* Quando aberto (qualquer largura) */
+nav[data-open] .menu { transform: translateX(0); }
+
+/* Links e botão de tema ocupam toda a largura dentro da gaveta */
+nav .menu a,
+nav .menu .bn62 {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+}
+
+/* ===== HAMBÚRGUER (sempre visível) ===== */
+.hamburger {
+  display: inline-block;      /* <-- sempre visível, inclusive no desktop */
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.hamburger .bar {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  height: 2px;
+  background: #fff;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.hamburger .bar:nth-child(1) { top: 12px; }
+.hamburger .bar:nth-child(2) { top: 19px; }
+.hamburger .bar:nth-child(3) { top: 26px; }
+
+nav[data-open] .hamburger .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav[data-open] .hamburger .bar:nth-child(2) { opacity: 0; }
+nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===== BACKDROP ===== */
+.backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  transition: opacity .25s ease;
+  z-index: 900;
+}
+.backdrop[aria-hidden="false"] { display: block; }
+.backdrop[aria-hidden="false"] { opacity: 1; }
+
+/* ===== TIPOGRAFIA / RESPONSIVIDADE ===== */
+
+/* Telefones menores */
+@media only screen and (max-width: 600px) {
+  body { font-size: 12px; }
+}
+
+/* Telefones grandes / tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  body { font-size: 16px; }
+}
+
+/* Desktop 1025+ */
+@media only screen and (min-width: 1025px) {
+  body { font-size: 18px; }
+}
+
+/* (Opcional) se você quiser mostrar o menu em linha no desktop além do hambúrguer,
+   você pode declarar um layout horizontal aqui e esconder a gaveta.
+   Mas como você pediu o hambúrguer também no desktop, mantivemos a gaveta para todos os tamanhos. */
