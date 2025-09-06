@@ -1,111 +1,98 @@
-/* ------------------------------
-   TÍTULOS PRINCIPAIS (h1, h2, h3)
-   ------------------------------ */
+/* ===============================
+   SISTEMA DE TEMAS COM VARIÁVEIS
+   =============================== */
 
-/* h1: Título principal da página ou seção */
-h1 {
-  margin-top: 50px;         /* Espaçamento superior em relação ao elemento anterior */
-  color: white;             /* Cor do texto */
-  text-align: center;       /* Centraliza horizontalmente */
+/* Tema padrão (escuro) */
+:root {
+  --bg: #0b0f10;
+  --text: #ffffff;
+  --muted: #a7a7a7;
+  --accent: #ff4d4f;       /* para <cite> */
+  --code: #7bd88f;         /* para <code> */
+  --pre-bg: #0f1416;       /* fundo do <pre> */
 }
 
-/* h2: Subtítulos ou divisões de seção */
-h2 {
-  margin-top: 100px;        /* Espaço maior para destacar a hierarquia */
-  color: white;
+/* Tema claro */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #121212;
+  --muted: #555555;
+  --accent: #b00020;
+  --code: #0b57d0;
+  --pre-bg: #f5f5f7;
+}
+
+/* Aplicação global */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background .2s ease, color .2s ease;
+}
+
+/* ===============================
+   TÍTULOS
+   =============================== */
+h1, h2, h3 {
+  color: var(--text);
   text-align: center;
 }
+h1 { margin-top: 50px; }
+h2, h3 { margin-top: 100px; }
 
-/* h3: Sub-subtítulos ou tópicos internos */
-h3 {
-  margin-top: 100px;
-  color: white;
-  text-align: center;
+/* ===============================
+   PARÁGRAFOS E VARIAÇÕES
+   =============================== */
+p, .pconf, .pconf1, .pconf2 {
+  color: var(--text);
 }
-
-
-/* ------------------------------
-   PARÁGRAFOS E VARIAÇÕES (.pconf)
-   ------------------------------ */
-
-/* Parágrafos padrão */
 p {
-  color: white;
-  margin-top: 1.5em;        /* Espaço superior padrão */
-  margin-bottom: 1em;       /* Espaço inferior padrão */
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
+.pconf { margin: 5px 0; }
+.pconf1 { margin: 15px 0 5px; }
+.pconf2 { margin: 5px 0 30px; }
 
-/* .pconf → versões de parágrafos em branco usadas para explicações,
-   com espaçamentos específicos entre blocos */
-.pconf, .pconf1, .pconf2 {
-  color: white;
-}
-
-.pconf {
-  margin-top: 5px;          /* Espaçamento mínimo acima */
-  margin-bottom: 5px;       /* Espaçamento mínimo abaixo */
-}
-
-.pconf1 {
-  margin-top: 15px;         /* Espaço maior acima */
-  margin-bottom: 5px;
-}
-
-.pconf2 {
-  margin-top: 5px;
-  margin-bottom: 30px;      /* Espaço maior abaixo */
-}
-
-
-/* ------------------------------
-   TEXTO CINZA (.pcinza)
-   ------------------------------ */
-
-/* .pcinza → texto em cinza, normalmente usado
-   para observações de configuração ou detalhes técnicos.
-   As variações mudam apenas o espaçamento vertical. */
+/* ===============================
+   TEXTO CINZA (observações)
+   =============================== */
 .pcinza, .pcinza2, .pcinza3 {
-  color: rgb(109, 109, 109);
+  color: var(--muted);
 }
+.pcinza { margin: 0; }
+.pcinza2 { margin-top: 20px; margin-bottom: 0; }
+.pcinza3 { margin-top: 0; margin-bottom: 16px; }
 
-.pcinza {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.pcinza2 {
-  margin-top: 20px;         /* Espaço extra acima */
-  margin-bottom: 0;
-}
-
-.pcinza3 {
-  margin-top: 0;
-  margin-bottom: 16px;      /* Espaço extra abaixo */
-}
-
-
-/* ------------------------------
+/* ===============================
    MARCAÇÕES ESPECIAIS
-   ------------------------------ */
-
-/* <cite> → usado para observações, citações ou destaques */
+   =============================== */
 cite {
-  color: red;               /* Chama a atenção */
-  font-size: 20px;          /* Levemente maior que o padrão */
+  color: var(--accent);
+  font-size: 20px;
 }
-
-/* <code> → usado para trechos de código ou comandos */
 code {
-  color: rgb(37, 131, 0);   /* Verde, remetendo a terminal */
-  font-size: 16px;          /* Mantém legível */
+  color: var(--code);
+  font-size: 16px;
 }
-
-/* <pre> → usado para blocos de código maiores */
 pre {
-  background: #0b0f10;      /* fundo escuro para destacar */
+  background: var(--pre-bg);
+  color: var(--text);
   padding: 12px;
   border-radius: 8px;
-  overflow-x: auto;         /* ativa rolagem horizontal se necessário */
-  white-space: pre;         /* mantém identação e não quebra linhas */
-  max-width: 100%;          /* impede estourar a tela */
+  overflow-x: auto;
+  white-space: pre;
+  max-width: 100%;
+  transition: background .2s ease, color .2s ease;
+}
+/* ===============================
+   LISTAS
+   =============================== */
+li {
+  color: var(--text);   /* usa a cor do texto principal */
+  margin: 6px 0;        /* dá um espacinho entre os itens */
+}
+
+/* Se tiver listas secundárias, pode usar a cor “muted” */
+li.muted {
+  color: var(--muted);
 }

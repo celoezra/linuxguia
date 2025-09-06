@@ -1,6 +1,7 @@
   /* Seções */
   .homepage, .comandos-df, .comandos-top, .comandos-help, .permissao-linux, .redes-basico, .ssh, .samba, .gerenciador-pacotes, .filesystem, .xorg {
-    background-color: #070707; /* Cor de fundo */
+    background-color: var(--card);  /* Cor de fundo */
+    color: inherit;
     padding: 20px; /* Espaçamento interno */
     border-radius: 8px; /* Cantos arredondados (opcional) */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil (opcional) */
@@ -8,51 +9,5 @@
     box-sizing: border-box; /* Inclui padding e borda nas dimensões */
   }
   
-  /* Modo escuro - seções */
-  [data-theme="dark"] .homepage,
-  [data-theme="dark"] .comandos-df, 
-  [data-theme="dark"] .comandos-top, 
-  [data-theme="dark"] .comandos-help, 
-  [data-theme="dark"] .permissao-linux, 
-  [data-theme="dark"] .redes-basico, 
-  [data-theme="dark"] .ssh, 
-  [data-theme="dark"] .samba, 
-  [data-theme="dark"] .gerenciador-pacotes, 
-  [data-theme="dark"] .filesystem,
-  [data-theme="dark"] .xorg {
-    background-color: #ffffff;
-    color: #000000;
   
-  }
-  
-  [data-theme="dark"] h1,
-  [data-theme="dark"] h2,
-  [data-theme="dark"] h3,
-  [data-theme="dark"] p,
-  [data-theme="dark"] .pconf,
-  [data-theme="dark"] .pconf1,
-  [data-theme="dark"] .pconf2,
-  [data-theme="dark"] .pcinza,
-  [data-theme="dark"] .pcinza2,
-  [data-theme="dark"] .pcinza3,
-  [data-theme="dark"] ul,
-  [data-theme="dark"] li {
-    color: #000000; /* Cor do texto em modo escuro */
-  }
-
-  
-  [data-theme="dark"] body  {
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  [data-theme="dark"] nav a {
-    color: #ffffff;
-  }
-  
-  [data-theme="dark"] nav a:hover {
-    background-color: #2daf05;
-    color: #000000;
-  }
-  /*Final do modo escuro*/
   
