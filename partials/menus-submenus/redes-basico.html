@@ -1,0 +1,44 @@
+<!-- REDES - INFORMAÇÕES -->
+<section id="redes-basico" class="redes-basico">
+  <h1>REDES BÁSICAS NO LINUX</h1>
+
+  <h2>Verificando interfaces de rede</h2>
+  <p class="pconf">O primeiro passo é identificar quais interfaces de rede estão ativas no seu sistema:</p>
+  <code>ip addr</code>
+  <p class="pconf">O comando acima lista interfaces como <strong>eth0</strong>, <strong>wlan0</strong> ou <strong>enp3s0</strong>.</p>
+
+  <h2>Configurando IP estático (método clássico)</h2>
+  <p class="pconf">Edite o arquivo de configuração de interfaces:</p>
+  <code>sudo nano /etc/network/interfaces</code>
+
+  <p class="pconf">Exemplo de configuração estática para a interface <strong>eth0</strong>:</p>
+  <pre><code>iface eth0 inet static
+    address 192.168.1.100 #Ip do seu computador-cliete
+    netmask 255.255.255.0 #Mascará da internet
+    gateway 192.168.1.1 #Gateway da internet
+    dns-nameservers 8.8.8.8 1.1.1.1 #Dns para consulta, esse dns é do google e Cloudflare
+</code></pre>
+
+  <cite>A linha <strong>dns-nameservers</strong> é opcional, use servidores confiáveis (Google, Cloudflare, seu provedor).</cite>
+
+  <h2>Aplicando alterações</h2>
+  <p class="pconf">Reinicie o serviço de rede sem precisar reiniciar o sistema:</p>
+  <code>sudo systemctl restart networking</code>
+
+  <h2>Testando conectividade</h2>
+  <p class="pconf">Para verificar se a rede está funcionando:</p>
+  <code>ping 8.8.8.8 -c 4</code><br>
+  <code>ping google.com -c 4</code>
+  <p class="pconf">Se o ping por IP funcionar mas o por nome não, revise suas configurações de DNS.</p>
+
+  <h2>Gerenciadores mais novos</h2>
+  <p class="pconf">Em distribuições recentes, pode ser que sua rede seja gerenciada pelo <strong>netplan</strong> ou pelo <strong>NetworkManager</strong>:</p>
+  <ul>
+    <li><strong>Netplan</strong>: configs em <code>/etc/netplan/*.yaml</code></li>
+    <li><strong>NetworkManager</strong>: configs via <code>nmtui</code> (interface de terminal) ou <code>nmcli</code> (linha de comando)</li>
+  </ul>
+
+  <h2>Dica</h2>
+  <p class="pconf">O nome da interface (<code>eth0</code>, <code>ens33</code>, <code>wlan0</code>) pode mudar dependendo do hardware. Use <code>ip addr</code> para confirmar.</p>
+</section>
+<!-- FINAL - REDES - INFORMAÇÕES -->

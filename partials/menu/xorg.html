@@ -1,0 +1,120 @@
+<section id="xorg" class="xorg">
+    <h1>O que é o Xorg no Linux?</h1>
+  
+    <p>O <strong>Xorg</strong> é o <strong>servidor gráfico</strong> mais usado no Linux e em sistemas Unix-like (como BSD). Ele faz parte do <strong>sistema X Window</strong>, que permite o uso de interfaces gráficas no sistema. O Xorg atua como uma ponte entre o <strong>hardware gráfico</strong> (placa de vídeo) e as <strong>aplicações gráficas</strong> (navegadores, editores, etc.).</p>
+  
+    <h1>Principais Funções do Xorg:</h1>
+  
+    <ol>
+      <li><strong>Servidor de Exibição</strong>: O Xorg recebe comandos gráficos das aplicações e exibe na tela. Ele também captura eventos de entrada (teclado, mouse) e os repassa para os programas.</li>
+      
+      <li><strong>Configuração</strong>: As configurações do Xorg são ajustadas automaticamente, mas você pode modificar manualmente através do arquivo de configuração <code>/etc/X11/xorg.conf</code>.</li>
+      
+      <li><strong>Drivers Gráficos</strong>: O Xorg precisa de <strong>drivers</strong> para comunicar-se com a placa de vídeo. Exemplos incluem drivers da <strong>NVIDIA</strong>, <strong>AMD</strong> e <strong>Intel</strong>.</li>
+      
+      <li><strong>Compositores</strong>: Programas como <strong>Compton</strong> ou <strong>Picom</strong> podem ser usados com o Xorg para melhorar a suavidade da exibição e evitar problemas de rasgamento na tela.</li>
+      
+      <li><strong>Protocolo X11</strong>: O Xorg usa o protocolo <strong>X11</strong> para comunicação entre as aplicações e o servidor gráfico.</li>
+      
+      <li><strong>Personalização</strong>: O Xorg permite usar diferentes <strong>gerenciadores de janelas</strong> ou <strong>ambientes de desktop</strong> como <strong>KDE</strong>, <strong>GNOME</strong>, <strong>i3wm</strong>, etc.</li>
+      
+      <li><strong>Problemas Comuns</strong>: Falhas gráficas, como problemas com múltiplos monitores ou artefatos visuais, geralmente são causados por erros nas configurações do Xorg ou conflitos de drivers.</li>
+      
+      <li><strong>Wayland</strong>: O <strong>Wayland</strong> está substituindo o Xorg em algumas distribuições por ser mais moderno e eficiente, mas o Xorg ainda é amplamente utilizado.</li>
+    </ol>
+  
+    <p>Em resumo, o <strong>Xorg</strong> é o software que permite que você veja e interaja com a interface gráfica no Linux, conectando os programas gráficos ao hardware do seu sistema.</p>
+    
+    <h1>CONFIG DO XORG.CONF.D - DELL G15 -PLACA NVIDIA E INTEL (DESATUALIZADO- MODO ANTIGO)</h1>
+
+
+    <h3>Configuração Intel (30-intel.conf)</h3>
+  
+    <pre><code>
+  Section "Monitor"  # Seção para configuração do monitor do notebook
+      Identifier     "Monitor1"  # Nome único para o monitor do notebook
+      VendorName     "Unknown"  # Nome do fabricante (desconhecido)
+      ModelName      "Notebook Display"  # Nome do modelo do monitor
+      HorizSync      30.0 - 150.0  # Frequências horizontais suportadas
+      VertRefresh    40.0 - 120.0  # Frequências verticais suportadas
+      Option         "DPMS"  # Ativa o gerenciamento de energia para o monitor
+  EndSection
+  
+  Section "Screen"  # Seção para configuração da tela do notebook
+      Identifier     "Screen1"  # Nome único para a tela do notebook
+      Device         "intel"  # Associa a tela à GPU Intel
+      Monitor        "Monitor1"  # Usa a configuração do monitor do notebook
+  EndSection
+  
+  Section "Device"  # Seção para configuração da GPU Intel
+      Identifier     "intel"  # Nome único para a GPU Intel
+      Driver         "modesetting"  # Usa o driver de modos de configuração
+      Option         "TearFree" "true"  # Habilita opção para evitar screen tearing
+      BusID          "PCI:0:2:0"  # Identificador do barramento PCI da GPU
+  EndSection
+    </code></pre>
+ 
+
+        <h3>Configuração NVIDIA (20-nvidia.conf)</h3>
+      
+        <pre><code>
+      Section "ServerLayout"  # Seção que define o layout do servidor X
+          Identifier     "layout"  # Nome único para esse layout
+          Screen      0  "Screen0" 0 0  # Define a tela primária "Screen0" na posição (0,0)
+          InputDevice    "Keyboard0" "CoreKeyboard"  # Define o teclado como dispositivo de entrada
+          InputDevice    "Mouse0" "CorePointer"  # Define o mouse como dispositivo de entrada
+          Option         "Xinerama" "0"  # Desativa o Xinerama, que permite múltiplos monitores como um único
+      EndSection
+      
+      Section "InputDevice"  # Seção para configuração do teclado
+          Identifier     "Keyboard0"  # Nome único para o teclado
+          Driver         "kbd"  # Usa o driver padrão para teclado
+      EndSection
+      
+      Section "InputDevice"  # Seção para configuração do mouse
+          Identifier     "Mouse0"  # Nome único para o mouse
+          Driver         "mouse"  # Usa o driver padrão para mouse
+          Option         "Protocol" "auto"  # Protocolo de comunicação automático
+          Option         "Device" "/dev/psaux"  # Dispositivo do mouse
+          Option         "Emulate3Buttons" "no"  # Desativa a emulação de três botões
+          Option         "ZAxisMapping" "4 5"  # Configura a roda de rolagem
+      EndSection
+      
+      Section "Monitor"  # Seção para configuração do monitor
+          Identifier     "Monitor0"  # Nome único para o monitor
+          VendorName     "Unknown"  # Nome do fabricante (desconhecido)
+          ModelName      "Samsung Odyssey G30B"  # Nome do modelo do monitor
+          HorizSync      30.0 - 170.0  # Frequências horizontais suportadas
+          VertRefresh    60.0 - 144.0  # Frequências verticais suportadas
+          Option         "DPMS"  # Ativa o gerenciamento de energia para o monitor
+      EndSection
+      
+      # Configuração da GPU NVIDIA
+      Section "Device"
+          Identifier     "DeviceNvidia"
+          Driver         "nvidia"
+          VendorName     "NVIDIA Corporation"
+          BoardName      "NVIDIA GeForce RTX 3050 6GB Laptop GPU"
+          Option "AllowEmptyInitialConfiguration"
+          Option "Coolbits" "28"
+          Option "TripleBuffer" "on"
+          Option "ForceFullCompositionPipeline" "on"
+      EndSection
+      
+      # Configuração da tela NVIDIA (Screen1)
+      Section "Screen"
+          Identifier     "Screen0"
+          Device         "DeviceNvidia"
+          DefaultDepth   24
+          Option         "Stereo" "0"
+          Option         "nvidiaXineramaInfoOrder" "HDMI-1-0"
+          Option         "metamodes" "1920x1080_144 +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On, VSync=On}"
+          Option         "SLI" "Off"
+          Option         "MultiGPU" "Off"
+          Option         "BaseMosaic" "off"
+          SubSection     "Display"
+              Depth       24
+          EndSubSection
+      EndSection
+        </code></pre>
+</section>

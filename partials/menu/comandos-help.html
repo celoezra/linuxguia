@@ -1,0 +1,193 @@
+<!-- COMANDOS HELP -->
+<section id="comandos-help" class="comandos-help">
+<h1>COMANDOS NO TERMINAL - INICIANTES</h1>
+
+<p class="pconf">Man = Manual</p>
+<p class="pconf">man nome-da-ação = vai aparecer o manual dele</p>
+<p class="pconf">EXEMPLO: man apt </p>
+<p class="pconf">Pode usar --help</p>
+<p class="pconf2">EXEMPLO: ls --help</p>
+
+<p class="pconf">COMANDOS SE VOCÊ ESTÁ PERDIDO OU NÃO SABE ONDE ESTÁ NO TERMINAL</p>
+<p class="pconf">whoami = Quem sou eu ? vai te dizer que usuario você está logado</p>
+<p class="pconf2">pwd = imprime o nome do diretório local que você está</p>
+
+<p class="pconf">Comandos no terminal, para deixar mais facil
+<p class="pconf">!! = Faz o comando que você coloca antes complementar o de cima no terminal
+<p class="pconf">exemplo: apt update no terminal sem root, ele vai dar erro e pedir para executar como root
+<p class="pconf">ao invés de colocar o comando todo com sudo na frente é só colocar sudo !! que ele complementa</p>
+<p class="pconf">history = historico, ele vai mostrar todos seus comandos e numerando eles.</p>
+<p class="pconf2">history -c = limpa todos os comandos do terminal.</p>
+
+<p class="pconf">Atalhos do Terminal:</p>
+<p class="pconf">CTRL + A = IR PARA O INICIO DA FRASE</p>
+<p class="pconf">CTRL + D = APAGA UM CARACTERE À DIREITA</p>
+<p class="pconf">CTRL + H = APAGA UM CARACTERE À ESQUERDA</p>
+<p class="pconf">CTRL + R = PROCURA NO HÍSTORICO DE COMANDOS </p>
+<p class="pconf2">CTRL + L = LIMPAR O TERMINAL</p>
+
+
+<p class="pconf2">CRIAÇÃO DE ARQUIVOS E DIRETORIOS</p>
+
+<p class="pconf">APRENDENDO A CRIAR DIRETORIOS</p>
+<p class="pconf">mkdir = cria um diretorio</p>
+<p class="pconf2">exemplo: mkdir nome-do-diretorio</p>
+
+<p class="pconf">APRENDENDO A REMOVER DIRETORIOS</p>
+<p class="pconf">rmdir = remove diretorios vazios</p>
+<p class="pconf">rm = remover (não vai ter como recuperar o arquivo, pois não vai ser enviado para lixeira).</p>
+<p class="pconf">rm -i = remover interativo, ele vai perguntar se realmente vai excluir.</p>
+<p class="pconf">rm -v = remover verbose vai dar mais detalhes sobre o arquivo.</p>
+<p class="pconf">rm -vi = seria o verbose e o interativo juntos.</p>
+<p class="pconf">rm -r = consigo remover o diretório.</p>
+
+<p class="pconf">CRIANDO ARQUIVOS DE TEXTO</p>
+<p class="pconf">Posso usar o comando touch nome-do-arquivo.EXTENSÃO</p>
+<p class="pconf2">ou posso usar nano nome-do-arquivo.EXTENSÃO (usando o nano, já vai permitir escrever, já no touch ele só cria o arquivo)</p>
+
+<p class="pconf">VERIFICAÇÃO DE DIRETORIOS E ARQUIVOS</p>
+
+<p class="pconf">Comando du (vê o espaço que um diretorio ocupa)</p>
+<p class="pconf2">exemplo du -h diretorio = mostra o gb ou mb que o diretorio ocupa</p>
+
+<p class="pconf">Comando diff = ele compara dois arquivos </p>
+<p class="pconf2">exemplo diff arquivo1.txt arquivo2.txt</p>
+
+<p class="pconf">LINK SIMBÓLICO:::</p>
+<p class="pconf">Criando link simbólico linux para pastas:</p>
+<p class="pconf">ln -s /diretorio/e/pasta nome-do-link</p>
+<p class="pconf">Removendo link Simbólico linux para pastas:</p>
+<p class="pconf2">rm nome-do-link (mesmo exemplo que seria remover um .txt)</p>
+
+<p class="pconf">ACESSANDO ROOT OU SUPERUSUARIO NO TERMINAL</p>
+<p class="pconf">root = super usuario /usuario administrativo do sistema.</p>
+<p class="pconf">sudo - = acessa root</p>
+<p class="pconf">sudo su = subistituir usuario</p>
+
+<!--COMANDOS PARA ARQUIVOS-->
+<h1>COMANDOS PARA ARQUIVOS</h1>
+
+<p>Cd</p>
+    <ul>
+        <li>cd.. = volta um nível acima</li>
+        <li>cd - = último diretório aberto</li>
+        <li>cd ~ = volta ao diretório home</li>
+    </ul>
+
+<p>Ls</p>
+    <ul>
+        <li>ls -l = listar todos os arquivos de forma longa</li>
+        <li>ls -lh = listar todos os arquivos de uma forma completa, incluindo o quanto ocupa</li>
+        <li>ls -dl = mostra as permissões do diretório</li>
+        <li>ls --color = para deixar os diretórios roxo e os arquivos verde.</li>
+    </ul>
+
+<p>Cp</p>
+    <ul>
+        <li>cp = copiar</li>
+        <li>cp -r = copiar todo o diretório</li>
+        <li>cp -b = gera cópia de segurança se o arquivo de destino já existir.</li>
+        <li>cp -f = substitui arquivos existentes sem pedir confirmação.</li>
+        <li>cp -i = pede permissão antes de substituir arquivos existentes.</li>
+        <li>cp -l = cria um link para o arquivo de origem ao invés de copiar o arquivo.</li>
+        <li>cp -v = lista os arquivos copiados.</li>
+        <li>cp --help = lista as opções disponíveis com o comando.</li>
+    </ul>
+
+<p>Mover</p>
+    <ul>
+        <li>mv arquivo1.txt arquivo2.txt /home/celoezra/Alfa = ele vai mover os arquivos para onde for especificado</li>
+        <li>mv -i arquivo.txt /home/celoezra/Alfa = vai mover de forma interativa, vai perguntar se quer sobreescrever dados se tiver um arquivo com esse nome</li>
+        <li>mv -r arquivo1.txt arquivo2.txt = vai mover de forma recursiva, alterar tudo sem perguntar</li>
+        <li>mv -n arquivo1.txt arquivo2.txt = faz a mesma coisa que o -i</li>
+        <li>mv -u arquivo1.txt arquivo2.txt = só sobreescreve se o lugar que você for jogar tiver data de alteração menor que a do arquivo que eu mandar</li>
+    </ul>
+
+<p>COMO EXTRAIR ARQUIVOS ATRAVÉS DO TERMINAL</p>
+    <ul>
+        <li>unzip nomedoarquivo.zip = serve para zip</li>
+        <li>unrar x nomedoarquivo.rar = serve para rar</li>
+        <li>tar -xvf nomedoarquivo.tar = serve para tar</li>
+        <li>tar -vzxf nomedoarquivo.tar.gz = serve para tar.gz</li>
+        <li>bunzip nomedoarquivo.bz2 = serve para bz2</li>
+        <li>tar -jxvf nomedoarquivo.tar.bz2 = serve para tar.bz2</li>
+    </ul>
+
+    <p>MONTANDO UM HD, SSD OU PENDRIVE SEM INTERFACE</p>
+    <ul>
+        <li>Você vai precisar saber o UUID do dispositivo, basicamente é a identificação dele.</li>
+        <li>Vai precisar do comando: blkid</li>
+        <li>E depois vai editar o arquivo do fstab em /etc/fstab</li>
+    </ul>
+
+    <p>Exemplo de como vai ficar montado:</p>
+    <ul>
+        <li>UUID=21da1f35-906e-45cc-bb4d-09b6779dff13 /media/BKP-LINUX/ ext4 defaults,user,auto,rw 0 0</li>
+    </ul>
+
+    <p>UUID= IDENTIFICAÇÃO DO DISPOSITIVO</p>
+    <ul>
+        <li>/MEDIA/BKP-LINUX/ = LOCAL DA MONTAGEM</li>
+        <li>EXT4 = TIPO DE FORMATAÇÃO DO DISPOSITIVO</li>
+    </ul>
+
+<p>PESQUISAR:</p>
+
+<p>Grep
+    <ul>
+        <li>grep 'palavra chave em aspas simples' no lugar que você quer procurar.</li>
+        <li>grep -i 'palavra maiúscula ou minúscula' lugar que você quer procurar.</li>
+    </ul>
+</p>
+
+<p>EDITORES:</p>
+
+<p>Nano:</p>
+    <ul>
+        <li>CTRL + X = sai do editor</li>
+        <li>CTRL + O = salva o documento</li>
+        <li>CTRL + W = procura a palavra</li>
+        <li>CTRL + K = recorta</li>
+        <li>CTRL + U = cola</li>
+        <li>CTRL + / = colocar linha que você quer encontrar</li>
+        <li>CTRL + J = justificar</li>
+    </ul>
+
+<p>Sed Editor</p>
+    <ul>
+        <li>sed -e = vai imprimir na tela do usuário, não modifica nada. exemplo: sed -e 's/PADRAO/SUBSTITUIR PELO O QUE/' (nome-do-arquivo)</li>
+        <li>sed -i = vai trocar, mas não vai imprimir na tela</li>
+        <li>sed -e '/PADRAO/d' = ele vai deletar o que você quiser, mas como está -e ele só vai imprimir e não salva, para salvar é -i.</li>
+        <li>sed -e '/^$/d' = para excluir as pulas de linha</li>
+        <li>sed -e 's/nome\|name\|hombre/#######/' = ele vai trocar nome, name e hombre por #######</li>
+    </ul>
+
+<p>Cut</p>
+    <ul>
+        <li>cut -c 1,2,3 exemplo.txt (1,2,3 são colunas do texto que você está utilizando)</li>
+        <li>cut -c 1-3 exemplo.txt (1 a 3 são colunas do texto que você está utilizando)</li>
+        <li>d = delimitador</li>
+        <li>f = campo</li>
+        <li>exemplo: cut -d ',' -f '1,3' arquivo = (campo 1 e 3)</li>
+        <li>exemplo para salvar: cut -d ',' -f '3' arquivoorigem.txt > arquivodestino.txt</li>
+        <li>exemplo delimitador como espaço = cut -d ' ' -f '1,2' arquivoorigem.txt</li>
+        <li>exemplo de troca de delimitador = cut -d ' ' -f '1,2' --output-delimiter=',' arquivoorigem.txt (troca o delimitador por vírgula)</li>
+    </ul>
+
+<p>Vim:</p>
+    <ul>
+        <li>dd = delete (no modo leitura)</li>
+        <li>i = inserção = para inserir texto</li>
+        <li>ESC = sai do modo inserção</li>
+        <li>: = modo comando</li>
+        <li>w = salva o que foi alterado</li>
+        <li>q! = força ao editor sair sem salvar.</li>
+        <li>q = quit</li>
+        <li>syntax on = deixa com cores os textos</li>
+        <li>set number = coloca números nas linhas</li>
+    </ul>
+</p>
+
+<!--FINAL DO COMANDOS PARA ARQUIVOS-->
+</section>
+<!-- FINAL COMANDOS HELP -->

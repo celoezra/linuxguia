@@ -1,0 +1,64 @@
+<!--FILESYSTEM-->
+<section id="filesystem" class="filesystem">
+    <h1>Representação sobre as pastas no Linux:</h1>
+    <p>No Linux, o sistema de arquivos é organizado hierarquicamente e segue um padrão chamado "Filesystem Hierarchy Standard" (FHS), que define a estrutura das pastas e diretórios do sistema. Aqui estão algumas das pastas mais importantes no sistema de arquivos do Linux:</p>
+
+    <p>/ (raiz): É o diretório raiz do sistema de arquivos. Todas as pastas e arquivos estão contidos dentro desta pasta.</p>
+
+    <p>/bin: Contém arquivos executáveis essenciais para o funcionamento do sistema. Aqui estão localizados comandos básicos do sistema, como ls (listar arquivos), cp (copiar arquivos) e mv (mover arquivos).</p>
+
+    <p>/boot: Contém arquivos relacionados ao processo de inicialização (boot) do sistema, como o kernel do Linux, imagens de inicialização e configurações do bootloader, como o GRUB.</p>
+
+    <p>/dev: É o diretório que contém arquivos especiais que representam dispositivos de hardware. Por exemplo, /dev/sda representa o primeiro disco rígido, /dev/tty representa um terminal de texto, e assim por diante.</p>
+
+    <p>/etc: Contém arquivos de configuração do sistema. Aqui você encontrará arquivos de configuração para diversos aspectos do sistema, como redes, serviços, usuários, permissões e outros.</p>
+
+    <p>/home: É o diretório onde os diretórios pessoais dos usuários são criados. Cada usuário do sistema terá uma pasta dentro de /home para armazenar seus arquivos pessoais.</p>
+
+    <p>/lib e /lib64: Contêm bibliotecas compartilhadas (arquivos .so) que são usadas por programas em execução no sistema.</p>
+
+    <p>/media e /mnt: São diretórios onde dispositivos de armazenamento removíveis, como pendrives e discos externos, podem ser montados. /media é usado para montagens automáticas, enquanto /mnt é geralmente usado para montagens temporárias.</p>
+
+    <p>/opt: É um diretório destinado a pacotes de software adicionais instalados pelo usuário ou por aplicativos de terceiros. Geralmente, os programas instalados em /opt têm sua própria estrutura interna de diretórios.</p>
+
+    <p>/srv: É um diretório destinado a dados de serviço específicos do sistema, como arquivos de dados de sites da web, repositórios de dados para servidores FTP, entre outros.</p>
+
+    <p>/tmp: É um diretório temporário onde os aplicativos podem criar arquivos temporários durante a execução. Esses arquivos são excluídos automaticamente quando o sistema é reiniciado.</p>
+
+    <p>Essas são apenas algumas das pastas principais no sistema de arquivos do Linux. É importante ressaltar que diferentes distribuições Linux podem ter pequenas variações na estrutura de diretórios, mas em geral, a estrutura básica é semelhante.</p>
+
+    <p class="titulo-central">Diferença entre BTRFS e EXT4</p>
+
+    <p>O ext4 (Fourth Extended File System) e o Btrfs (B-tree File System) são sistemas de arquivos para sistemas operacionais baseados em Linux, e eles possuem algumas diferenças significativas em termos de recursos e design. Vamos abordar algumas das principais diferenças entre o ext4 e o Btrfs:</p>
+
+    <p><strong>Gerenciamento de Espaço:</strong></p>
+    <p>ext4: Usa uma abordagem tradicional de alocação de espaço, onde os blocos são alocados para arquivos de forma contígua.</p>
+    <p>Btrfs: Utiliza uma árvore B para gerenciar a alocação de blocos, permitindo snapshots, cópias rápidas e alocação dinâmica de espaço.</p>
+
+    <p><strong>Snapshots:</strong></p>
+    <p>ext4: Não tem suporte nativo para snapshots. Snapshots são cópias instantâneas do sistema de arquivos em um determinado ponto no tempo.</p>
+    <p>Btrfs: Oferece suporte nativo para snapshots, o que permite criar instantâneos eficientes do sistema de arquivos.</p>
+
+    <p><strong>Recuperação de Erros:</strong></p>
+    <p>ext4: Possui ferramentas tradicionais de verificação e correção de erros, como o e2fsck.</p>
+    <p>Btrfs: Inclui funcionalidades de autoreparo, sendo capaz de corrigir alguns erros no sistema de arquivos automaticamente.</p>
+
+    <p><strong>Recuperação de Dados:</strong></p>
+    <p>ext4: A recuperação de dados pode ser mais desafiadora em comparação com o Btrfs em alguns casos.</p>
+    <p>Btrfs: Oferece melhores recursos de recuperação de dados, especialmente devido à capacidade de realizar verificações e correções automáticas.</p>
+
+    <p><strong>Checksums e Integridade de Dados:</strong></p>
+    <p>ext4: Não possui verificação de integridade de dados embutida.</p>
+    <p>Btrfs: Usa checksums para dados e metadados, ajudando a detectar corrupção de dados.</p>
+
+    <p><strong>Manutenção e Administração:</strong></p>
+    <p>ext4: Mais estabelecido e amplamente utilizado, com ferramentas maduras de administração.</p>
+    <p>Btrfs: Embora tenha amadurecido ao longo do tempo, pode ser visto como mais avançado e pode exigir mais conhecimento técnico para administrar efetivamente.</p>
+
+    <p><strong>Compatibilidade:</strong></p>
+    <p>ext4: Amplamente suportado e pode ser uma escolha mais conservadora para a compatibilidade com sistemas mais antigos ou ambientes mais tradicionais.</p>
+    <p>Btrfs: Embora bem suportado, pode não ser a melhor escolha em todos os casos, dependendo dos requisitos específicos do sistema.</p>
+
+    <p>A escolha entre ext4 e Btrfs depende das necessidades específicas do sistema, do nível de familiaridade do administrador com cada sistema de arquivos e dos recursos desejados, como snapshots, recuperação de erros avançada e alocação dinâmica de espaço.</p>
+</section>
+<!--FINAL FILESYSTEM-->

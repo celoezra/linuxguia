@@ -1,0 +1,59 @@
+<!-- SAMBA -->
+<section id="samba" class="samba">
+<h1>SAMBA INSTALAÇÃO E CONFIGURAÇÃO</h1>
+<code>apt-get install samba</code>
+<p>configuração do arquivo samba > /etc/samba/smb.conf</p>
+<p class="pcinza">[global]</p>
+<p class="pcinza">workgroup = cosmos</p>
+<p class="pcinza">server string = neturno</p>
+<p class="pcinza">server role = standalone server</p>
+<p class="pcinza">passdb backend = smbpasswd</p>
+<p class="pcinza">security = user</p>
+<p class="pcinza">map to guest = bad user</p>
+
+<p class="pcinza2">[arquivos]</p>
+<p class="pcinza">path = /home/share</p>
+<p class="pcinza">guest ok = yes</p>
+<p class="pcinza">read only = no</p>
+<p class="pcinza">comment = MY Files</p>
+<p class="pcinza">public = yes</p>
+<p class="pcinza">create mask = 0700</p>
+<p class="pcinza">directory mask = 0700</p>
+<p class="pcinza">rowseable = yes</p>
+<p class="pcinza">writable = yes</p>
+<p class="pcinza">printable = no </p>
+<p class="pcinza">create mode = 0777</p>
+<p class="pcinza3">directory mode = 0777</p>
+
+<p>configuração do arquivo samba > /etc/samba/smb.conf</p>
+<pre><code>
+[global]
+workgroup = cosmos
+server string = neturno
+server role = standalone server
+passdb backend = smbpassw
+security = user
+map to guest = bad user
+</code></pre>
+<code><pre>
+[arquivos]
+path = /home/share
+guest ok = yes
+read only = no
+comment = MY Files
+public = yes
+create mask = 0700
+directory mask = 0700
+rowseable = yes
+writable = yes
+printable = no 
+create mode = 0777
+directory mode = 0777
+</code></pre>
+
+<cite>Para conseguir editar via computador-cliete precisa fazer isso com a pasta chefe</cite><br>
+<code>chmod u=rwx /pasta/chefe</code><br>
+<code>chmod g=rwx /pasta/chefe</code><br>
+<code>chmod o=rwx /pasta/chefe</code><br>
+</section>
+<!-- FINAL SAMBA -->

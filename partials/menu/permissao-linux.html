@@ -1,0 +1,29 @@
+<!-- Entendo Permissões do linux -->
+<section id="permissao-linux" class="permissao-linux">
+<h1>ENTENDENDO AS PERMISSÕES DO LINUX</h1>
+<p>primeiras letras mostram o tipo de arquivo.</p>
+<p class="pconf">Se for d é diretorio.</p>
+<p class="pconf">Se for - é um arquivo normal.</p>
+<p class="pconf">Se for l é um link simbolico.</p>
+<p class="pconf">Se for c é um arquivo especial</p>
+<p class="pconf">Se for b é um arquivo de bloco</p>
+<p class="pconf">Se for s é um arquivo socket</p>
+
+<p class="pconf1">R = read ou seja leitura, vale 4</p>
+<p class="pconf">W = write ou seja escrita, vale 2</p>
+<p class="pconf">x = execução, vale 1</p>
+<p class="pconf2">sem permissão, vale 0</p>
+
+<p class="pconf">As permissões são divididas em três gurpos:</p>
+<p class="pconf">Dono/proprietario - Grupo e Outros.</p>
+<p class="pconf">exemplo: -rwxr-xr-x (aqui o arquivo é normal, a permissão do dono é de escrita, leitura e execução)</p>
+
+<p>CHMOD DANDO PERMISSÕES</p>
+<p class="pconf">chmod = change mod ou ajustar a permissão</p>
+<p class="pconf">o numero 7 dá permissão de tudo, porque é a soma de 4+2+1 ou seja r+w+x = 7.</p>
+<p class="pconf">exemplo: chmod 777 arquivo, ele dá permissão para o dono, grupo e outros.</p>
+<p class="pconf">outro exemplo: chmod 700 arquivo, ele dá permissão de tudo (r,w e x) para o dono. outros e grupo ficam sem nenhuma permissão</p>
+<p class="pconf">outro exemplo: chmod 444 arquivo, aqui ele dá permissão só de escrita para todo mundo.</p>
+<p class="pconf">outro exemplo: chmod -r 400 diretorio/outroarquivo, aqui ele dá permissão só de escrita somente para o dono, o resto fica sem. E faz os outros arquivos dentro do diretorio tenham permissão de leitura do dono</p>
+</section>
+<!-- FINAL - Entendo Permissões do linux -->

@@ -1,0 +1,22 @@
+{
+"items": [
+{ "label": "COMANDOS DF", "hash": "#comandos-df", "partial": "/partials/menu/comandos-df.html" },
+{ "label": "COMANDOS TOP", "hash": "#comandos-top", "partial": "partials/menu/comandos-top.html" },
+{ "label": "COMANDOS TERMINAL", "hash": "#comandos-help", "partial": "partials/menu/comandos-help.html" },
+{ "label": "PERMISSÕES DO LINUX", "hash": "#permissao-linux", "partial": "partials/menu/permissao-linux.html" },
+{
+"label": "REDES",
+"submenu": [
+{ "label": "Básico", "hash": "#redes-basico", "partial": "partials/menus-submenus/redes-basico.html" },
+{ "label": "Comandos úteis", "hash": "#redes-comandos", "partial": "partials/redes-comandos.html" },
+{ "label": "Troubleshooting", "hash": "#redes-troubleshoot", "partial": "partials/redes-troubleshoot.html" }
+]
+},
+{ "label": "SSH", "hash": "#ssh", "partial": "partials/menu/ssh.html" },
+{ "label": "SAMBA", "hash": "#samba", "partial": "partials/menu/samba.html" },
+{ "label": "GERENCIADOR DE PACOTES", "hash": "#gerenciador-pacotes", "partial": "partials/menu/gerenciador-pacotes.html" },
+{ "label": "FILESYSTEM", "hash": "#filesystem", "partial": "partials/menu/filesystem.html" },
+{ "label": "XORG", "hash": "#xorg", "partial": "partials/menu/xorg.html" }
+],
+"defaultHash": "#comandos-df"
+}

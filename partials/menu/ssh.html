@@ -1,0 +1,37 @@
+<!-- SSH ACESSO REMOTO -->
+<section id="ssh" class="ssh">
+    <h1>ACESSO REMOTO SSH</h1>
+
+    <p><strong>CONFIGURANDO SSH</strong></p>
+    <p>SSH é a sigla para <strong>Secure Socket Shell</strong>, um protocolo de segurança para troca de arquivos entre cliente e servidor.</p>
+
+    <p><strong>Instalação</strong></p>
+    <p>Para instalar o SSH, execute os seguintes comandos:</p>
+    <code>apt-get install openssh-server && </code>
+    <code>apt-get install openssh-client</code>
+
+    <p><strong>CONEXÃO SSH</strong></p>
+    <p>Para se conectar via SSH, use o seguinte comando:</p>
+    <code>$ ssh usuario@ipdamaquina -p 278</code>
+    <p><strong>Nota:</strong> O <code>-p</code> é utilizado para definir a porta. Lembre-se de modificar a porta padrão 22 no arquivo <code>/etc/ssh/sshd_config</code> se necessário.</p>
+
+    <p><strong>TRANSFERÊNCIA DE ARQUIVOS</strong></p>
+    <p>O <strong>SCP</strong> (Secure Copy) é um protocolo de rede para transferências de arquivos. Para transferir arquivos, use os seguintes comandos:</p>
+
+    <p><strong>Copiar um arquivo remoto para a máquina local:</strong></p>
+    <code>scp usuarioMaquinaRemota@ipDaMaquinaRemota:/home/diretorioRemoto/arquivo.txt /home/diretoriolocal/</code>
+
+    <p><strong>Enviar um arquivo local para um servidor remoto:</strong></p>
+    <code>scp /home/diretorioLocal/arquivo.txt user@ipDaMaquinaRemota:/home/diretorioRemoto/arquivo.txt</code>
+
+    <p><strong>Exemplo:</strong></p>
+    <code>scp -r /home/marcelo/Downloads/nethunter.tar.gz celoezra@192.168.1.14:/home/celoezra/Downloads/nome-do-arquivo.sua-extensão</code>
+    <p><strong>Nota:</strong> Execute este comando no computador local. Marcelo é o usuário local e Celoezra é o remoto.</p>
+
+    <p><strong>Copiar pastas e subpastas do servidor remoto para a máquina local:</strong></p>
+    <code>scp -r usuarioMaquinaRemota@ipDaMaquinaRemota:/home/diretorioRemoto/pasta/ /home/diretorioLocal/</code>
+
+    <p><strong>Enviar pastas e subpastas da máquina local para o servidor remoto:</strong></p>
+    <code>scp -r /home/diretorioLocal/pasta/ usuarioMaquinaRemota@ipDaMaquinaRemota:/pasta/</code>
+</section>
+<!-- FINAL DO SSH -->

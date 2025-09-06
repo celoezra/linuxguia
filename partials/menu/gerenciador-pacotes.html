@@ -1,0 +1,102 @@
+<!--GERENCIADOR DE PACOTES-->
+<section id="gerenciador-pacotes" class="gerenciador-pacotes">
+<h1>GERENCIADORES DE PACOTES</h1>
+<p><strong>TIPOS DE GERENCIADORES.</strong></p>
+
+<p><strong>BAIXO NÍVEL</strong></p>
+
+<p>DPKG é um gerenciador de pacotes de baixo nível?</p>
+<p>Sim, o dpkg é geralmente considerado um gerenciador de pacotes de baixo nível no contexto do sistema operacional Linux. O dpkg é um software de linha de comando que é utilizado para instalar, remover e gerenciar pacotes de software no Debian e em seus derivados, como o Ubuntu.</p>
+<p>O dpkg é responsável por executar operações de baixo nível para gerenciar os pacotes de software, como instalar e desinstalar arquivos de pacotes, configurar os scripts de pré e pós-instalação e verificar as dependências do software. Ele é o gerenciador de pacotes primário utilizado no Debian e em suas variantes e é utilizado como base para outros gerenciadores de pacotes de alto nível, como o APT.</p>
+<p>No entanto, é importante lembrar que, embora o dpkg seja considerado um gerenciador de pacotes de baixo nível, ele ainda está em um nível de abstração mais alto do que o kernel Linux, que é o gerenciador de baixo nível que controla diretamente o hardware do sistema.</p>
+<p><strong>Porque o dpkg é considerado um pacote de baixo nível?</strong></p>
+<p>O dpkg é considerado um gerenciador de pacotes de baixo nível por algumas razões, como:</p>
+<ul>
+    <li>Interação direta com os arquivos de pacotes: O dpkg é responsável por manipular diretamente os arquivos de pacotes, instalando, removendo ou atualizando pacotes de software no sistema. Isso significa que ele é capaz de executar operações de baixo nível, como extrair e instalar arquivos diretamente nos locais adequados do sistema de arquivos.</li>
+    <li>Funcionamento em linha de comando: O dpkg é um software executado a partir da linha de comando, sem interface gráfica. Isso requer do usuário conhecimentos técnicos para utilizá-lo, o que o torna mais adequado para usuários avançados ou administradores de sistemas.</li>
+    <li>Controle de dependências de forma direta: O dpkg é responsável por gerenciar as dependências do software de forma direta, sem utilizar ferramentas de gerenciamento de dependências de mais alto nível, como o APT. Isso significa que ele precisa ser capaz de determinar manualmente as dependências e resolver os conflitos entre elas.</li>
+</ul>
+<p>No entanto, vale lembrar que o dpkg não é o único gerenciador de pacotes utilizado no sistema operacional Linux, e nem sempre é o mais adequado para todas as situações. Existem outros gerenciadores de pacotes de alto nível, como o APT, que fornecem recursos mais avançados de gerenciamento de dependências, instalação de pacotes em massa e atualização automática de software.</p>
+
+<p><strong>ALTO NÍVEL</strong></p>
+
+<p>O que é um Gerenciador de Pacotes de alto nível?</p>
+<p>Na verdade, o termo "gerenciador de pacotes de baixo nível" não é muito comum no contexto do Linux. Normalmente, quando se fala em gerenciador de pacotes no Linux, está se referindo a um software que é responsável por gerenciar a instalação, atualização e remoção de pacotes de software em um sistema operacional Linux.</p>
+<p>Esses gerenciadores de pacotes são uma parte essencial do ecossistema do Linux e facilitam muito a vida dos usuários e administradores do sistema, pois permitem instalar e manter o software de forma simples e organizada, além de garantir que as dependências do software sejam gerenciadas corretamente.</p>
+<p>Alguns exemplos de gerenciadores de pacotes de alto nível no Linux são o APT (Advanced Package Tool), utilizado no Debian e derivados, o DNF (Dandified YUM), utilizado no Fedora e derivados, e o Pacman, utilizado no Arch Linux.</p>
+
+<cite>EXEMPLOS DE GERENCIADOR DE ALTO NÍVEL</cite>
+
+<p><strong>APT:</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>apt-get update: atualiza o índice de pacotes disponíveis nos repositórios configurados.</li>
+    <li>apt-get upgrade: atualiza todos os pacotes instalados no sistema para a versão mais recente disponível.</li>
+    <li>apt-get install [pacote]: instala um pacote específico. Por exemplo, "apt-get install firefox" instalaria o navegador Firefox.</li>
+    <li>apt-get remove [pacote]: remove um pacote específico e suas dependências não utilizadas. Por exemplo, "apt-get remove firefox" removeria o Firefox e todas as dependências que não são usadas por outros pacotes.</li>
+    <li>apt-get autoremove: remove automaticamente todos os pacotes não utilizados que foram instalados como dependências de outros pacotes.</li>
+    <li>apt-get clean: limpa o cache dos pacotes baixados anteriormente do repositório.</li>
+    <li>apt-cache search [pacote]: pesquisa o repositório de pacotes em busca de um pacote específico. Por exemplo, "apt-cache search firefox" retornaria uma lista de pacotes relacionados ao Firefox.</li>
+    <li>apt-cache show [pacote]: exibe informações detalhadas sobre um pacote específico, incluindo a versão, data de lançamento e informações sobre dependências.</li>
+    <li>apt-get dist-upgrade: atualiza todos os pacotes instalados no sistema, incluindo suas dependências, para a versão mais recente disponível e também pode instalar ou remover pacotes adicionais, se necessário.</li>
+</ul>
+<p>Esses são apenas alguns dos comandos mais comuns do APT. Para obter mais informações sobre o gerenciador de pacotes APT, você pode consultar a documentação oficial do Debian ou do Ubuntu.</p>
+
+<p><strong>DNF</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>dnf search [pacote]: pesquisa o repositório de pacotes em busca de um pacote específico. Por exemplo, "dnf search firefox" retorna uma lista de pacotes relacionados ao Firefox.</li>
+    <li>dnf install [pacote]: instala um pacote específico. Por exemplo, "dnf install firefox" instalaria o navegador Firefox.</li>
+    <li>dnf update: atualiza todos os pacotes instalados no sistema para a versão mais recente.</li>
+    <li>dnf remove [pacote]: remove um pacote específico e suas dependências não utilizadas. Por exemplo, "dnf remove firefox" removeria o Firefox e todas as dependências que não são usadas por outros pacotes.</li>
+    <li>dnf list: lista todos os pacotes instalados no sistema.</li>
+    <li>dnf history: exibe um registro de todas as operações de instalação, atualização e remoção de pacotes.</li>
+    <li>dnf info [pacote]: exibe informações detalhadas sobre um pacote específico, incluindo a versão, data de lançamento e informações sobre dependências.</li>
+    <li>dnf upgrade: atualiza todos os pacotes instalados no sistema, incluindo suas dependências.</li>
+    <li>dnf repoquery: pesquisa o repositório de pacotes em busca de pacotes que atendam a determinados critérios.</li>
+</ul>
+
+<p><strong>YUM</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>yum search [pacote]: pesquisa o repositório de pacotes em busca de um pacote específico. Por exemplo, "yum search firefox" retorna uma lista de pacotes relacionados ao Firefox.</li>
+    <li>yum install [pacote]: instala um pacote específico. Por exemplo, "yum install firefox" instalaria o navegador Firefox.</li>
+    <li>yum update: atualiza todos os pacotes instalados no sistema para a versão mais recente.</li>
+    <li>yum remove [pacote]: remove um pacote específico e suas dependências não utilizadas. Por exemplo, "yum remove firefox" removeria o Firefox e todas as dependências que não são usadas por outros pacotes.</li>
+    <li>yum list: lista todos os pacotes instalados no sistema.</li>
+    <li>yum info [pacote]: exibe informações detalhadas sobre um pacote específico, incluindo a versão, data de lançamento e informações sobre dependências.</li>
+    <li>yum upgrade: atualiza todos os pacotes instalados no sistema, incluindo suas dependências.</li>
+    <li>yum history: exibe um registro de todas as operações de instalação, atualização e remoção de pacotes.</li>
+    <li>yum deplist [pacote]: lista todas as dependências de um pacote específico.</li>
+</ul>
+<p>Esses são apenas alguns dos comandos mais comuns do Yum. Para obter mais informações sobre o gerenciador de pacotes Yum, você pode consultar a documentação oficial do Red Hat ou do CentOS.</p>
+
+<p><strong>SNAP</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>snap find [pacote]: pesquisa o repositório de pacotes do Snap em busca de um pacote específico. Por exemplo, "snap find firefox" retorna uma lista de snaps relacionados ao Firefox.</li>
+    <li>snap install [pacote]: instala um pacote específico. Por exemplo, "snap install firefox" instalaria o navegador Firefox.</li>
+    <li>snap refresh [pacote]: atualiza um pacote específico para a versão mais recente disponível.</li>
+    <li>snap list: lista todos os pacotes Snap instalados no sistema.</li>
+    <li>snap remove [pacote]: remove um pacote específico e seus dados do sistema. Por exemplo, "snap remove firefox" removeria o Firefox e todos os seus dados.</li>
+    <li>snap revert [pacote]: reverte um pacote específico para a versão anterior.</li>
+    <li>snap changes: lista as alterações recentes feitas em snaps instalados no sistema.</li>
+    <li>snap info [pacote]: exibe informações detalhadas sobre um pacote Snap, incluindo a versão, a data de lançamento e o tamanho.</li>
+    <li>snap alias [pacote]: cria um alias para um pacote Snap. Por exemplo, "snap alias firefox firefox-beta" criaria um alias "firefox-beta" para o pacote Firefox.</li>
+</ul>
+
+<p><strong>PACMAN</strong></p>
+<p>Os comandos são:</p>
+<ul>
+    <li>pacman -S [pacote]: instala um pacote específico. Por exemplo, "pacman -S firefox" instalaria o navegador Firefox.</li>
+    <li>pacman -Syu: atualiza todos os pacotes instalados no sistema, incluindo suas dependências.</li>
+    <li>pacman -Q: lista todos os pacotes instalados no sistema.</li>
+    <li>pacman -R [pacote]: remove um pacote específico e suas dependências não utilizadas. Por exemplo, "pacman -R firefox" removeria o Firefox e todas as dependências que não são usadas por outros pacotes.</li>
+    <li>pacman -Ss [palavra-chave]: pesquisa o repositório de pacotes em busca de um pacote que contenha a palavra-chave. Por exemplo, "pacman -Ss editor" retorna uma lista de editores de texto disponíveis para instalação.</li>
+    <li>pacman -Sw [pacote]: baixa um pacote do repositório, mas não o instala. Por exemplo, "pacman -Sw firefox" baixa o pacote do Firefox para que possa ser instalado mais tarde.</li>
+    <li>pacman -Sc: limpa o cache do Pacman, removendo os pacotes antigos que já foram instalados ou baixados.</li>
+    <li>pacman -Qdt: lista pacotes órfãos, ou seja, pacotes que foram instalados como dependências, mas que não são mais necessários por nenhum outro pacote.</li>
+    <li>pacman -Qii [pacote]: exibe informações detalhadas sobre um pacote instalado, incluindo seus arquivos e dependências.</li>
+</ul>
+</section>
+<!--FINAL GERENCIADOR DE PACOTES-->
