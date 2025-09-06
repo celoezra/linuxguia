@@ -5,4 +5,7 @@ section, .card, .homepage, .comandos-df, .comandos-top, .comandos-help,
   background-color: var(--card);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+  margin: 1.5em auto;   /* espaçamento vertical */
+  padding: 1.5em;       /* respiro interno */
+  max-width: 860px;     /* largura máxima p/ leitura */
 }

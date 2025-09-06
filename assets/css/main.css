@@ -12,7 +12,6 @@ html[data-theme="dark"] {
   --card: #ffffff; /* fundo dos blocos (dark) */
 }
 
-
 html, body {
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -27,7 +26,6 @@ html, body {
   transition: background-color .25s ease, color .25s ease;
 }
 
-
 /* Modo escuro - menu */
 [data-theme="dark"] nav {
   background-color: #555555;
@@ -41,7 +39,7 @@ nav {
   left: 0;
   width: 100%;
   background-color: #000000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0); /* Linha de separação */
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
   padding: 8px 12px;
   box-sizing: border-box;
   z-index: 1000;
@@ -52,7 +50,7 @@ nav {
   gap: 12px;
 }
 
-/* LINKS padrões (quando usados em linha) */
+/* LINKS padrões */
 nav a {
   padding: 8px;
   color: #ffffff;
@@ -86,51 +84,37 @@ ul, li { color: white; }
 }
 
 /* ===== BASE DO MENU COLAPSÁVEL ===== */
-
-/* lista do menu como contêiner (vai virar gaveta) */
 nav .menu {
   list-style: none;
   margin: 0;
   padding: 0;
-
-  /* Gaveta lateral OFF por padrão (qualquer largura) */
   position: fixed;
-  top: 56px;                 /* altura aproximada da navbar */
+  top: 56px;
   right: 0;
   bottom: 0;
-
-  /* largura adaptativa pra desktop e mobile */
   width: clamp(280px, 30vw, 380px);
-
   background: #000000;
   border-left: 1px solid rgb(255, 255, 255);
-
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 0;
-
   transform: translateX(100%);
   transition: transform .25s ease;
   padding: 12px;
   z-index: 1001;
 }
-
-/* Quando aberto (qualquer largura) */
 nav[data-open] .menu { transform: translateX(0); }
-
-/* Links e botão de tema ocupam toda a largura dentro da gaveta */
-nav .menu a,
-nav .menu .bn62 {
+nav .menu a, nav .menu .bn62 {
   display: block;
   width: 100%;
   text-align: left;
   padding: 12px;
 }
 
-/* ===== HAMBÚRGUER (sempre visível) ===== */
+/* ===== HAMBÚRGUER ===== */
 .hamburger {
-  display: inline-block;      /* sempre visível, inclusive no desktop */
+  display: inline-block;
   position: relative;
   width: 40px;
   height: 40px;
@@ -150,7 +134,6 @@ nav .menu .bn62 {
 .hamburger .bar:nth-child(1) { top: 12px; }
 .hamburger .bar:nth-child(2) { top: 19px; }
 .hamburger .bar:nth-child(3) { top: 26px; }
-
 nav[data-open] .hamburger .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 nav[data-open] .hamburger .bar:nth-child(2) { opacity: 0; }
 nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -165,31 +148,15 @@ nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate
   transition: opacity .25s ease;
   z-index: 900;
 }
-.backdrop[aria-hidden="false"] { 
-  display: block; 
-  opacity: 1; 
-}
+.backdrop[aria-hidden="false"] { display: block; opacity: 1; }
 
 /* ===== TIPOGRAFIA / RESPONSIVIDADE ===== */
-
-/* Telefones menores */
-@media only screen and (max-width: 600px) {
-  body { font-size: 12px; }
-}
-
-/* Telefones grandes / tablets */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  body { font-size: 16px; }
-}
-
-/* Desktop 1025+ */
-@media only screen and (min-width: 1025px) {
-  body { font-size: 18px; }
-}
+@media only screen and (max-width: 600px) { body { font-size: 12px; } }
+@media only screen and (min-width: 601px) and (max-width: 1024px) { body { font-size: 16px; } }
+@media only screen and (min-width: 1025px) { body { font-size: 18px; } }
 
 /* ====== SUBMENUS (Acordeão) ====== */
 .menu .has-sub { position: relative; }
-
 .menu .submenu-toggle {
   -webkit-appearance: none;
   appearance: none;
@@ -211,13 +178,11 @@ nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate
   color: #000;
   outline: none;
 }
-
 .menu .submenu-toggle {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* separa o texto da setinha */
+  justify-content: space-between;
 }
-
 .menu .submenu-toggle .caret {
   width: 0; height: 0;
   margin-left: 8px;
@@ -226,30 +191,17 @@ nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate
   border-left: 6px solid currentColor;
   transition: transform .2s ease;
 }
-
-
-/* container do submenu (colapsado por padrão) */
 .menu .has-sub > .submenu {
   list-style: none;
   margin: 0;
-  padding: 0 0 0 12px; /* recuo à esquerda */
+  padding: 0 0 0 12px;
   max-height: 0;
   overflow: hidden;
   transition: max-height .25s ease;
   border-left: 1px dashed rgb(255, 0, 0);
 }
-
-/* quando aberto */
-.menu .has-sub.open > .submenu {
-  max-height: 600px; /* valor suficiente p/ caber os itens (ajuste se precisar) */
-}
-
-/* gira a setinha quando aberto */
-.menu .has-sub.open > .submenu-toggle .caret {
-  transform: rotate(90deg);
-}
-
-/* links dentro do submenu */
+.menu .has-sub.open > .submenu { max-height: 600px; }
+.menu .has-sub.open > .submenu-toggle .caret { transform: rotate(90deg); }
 .menu .submenu a {
   display: block;
   padding: 10px 12px;

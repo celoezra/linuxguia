@@ -27,6 +27,7 @@ html, body {
   background: var(--bg);
   color: var(--text);
   transition: background .2s ease, color .2s ease;
+  line-height: 1.6; /* espaçamento entre linhas */
 }
 
 /* ===============================
@@ -35,19 +36,22 @@ html, body {
 h1, h2, h3 {
   color: var(--text);
   text-align: center;
+  margin-top: 2em;       /* margem superior maior */
+  margin-bottom: 1em;    /* separa do texto abaixo */
 }
-h1 { margin-top: 50px; }
-h2, h3 { margin-top: 100px; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.3rem; }
 
 /* ===============================
    PARÁGRAFOS E VARIAÇÕES
    =============================== */
 p, .pconf, .pconf1, .pconf2 {
   color: var(--text);
+  line-height: 1.7;  /* leitura mais confortável */
 }
 p {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
+  margin: 1em 0;    /* mais espaço acima e abaixo */
 }
 .pconf { margin: 5px 0; }
 .pconf1 { margin: 15px 0 5px; }
@@ -87,10 +91,16 @@ pre {
 /* ===============================
    LISTAS
    =============================== */
-li {
-  color: var(--text);   /* usa a cor do texto principal */
-  margin: 6px 0;        /* dá um espacinho entre os itens */
+ul, ol {
+  margin: 1em 0 1em 1.5em;  /* respiro em cima/baixo e recuo */
+  padding-left: 1em;
 }
+li {
+  color: var(--text);
+  margin: .5em 0;      /* espaçamento entre itens */
+  line-height: 1.6;
+}
+li::marker { color: var(--muted); }
 
 /* Se tiver listas secundárias, pode usar a cor “muted” */
 li.muted {
