@@ -53,7 +53,7 @@ function setupTheme() {
   const themeBtn = document.getElementById("theme-toggle");
   if (!themeBtn) return;
   const setLabel = () => {
-    themeBtn.textContent = root.getAttribute("data-theme") === "dark" ? "Alternar para Light" : "Alternar para Dark";
+    themeBtn.textContent = root.getAttribute("data-theme") === "dark" ? "Alternar para Dark" : "Alternar para Light";
   };
   setLabel();
   themeBtn.addEventListener("click", () => {
