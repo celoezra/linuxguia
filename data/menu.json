@@ -1,6 +1,6 @@
 {
 "items": [
-{ "label": "COMANDOS DF", "hash": "#comandos-df", "partial": "/partials/menu/comandos-df.html" },
+{ "label": "COMANDOS DF", "hash": "#comandos-df", "partial": "partials/menu/comandos-df.html" },
 { "label": "COMANDOS TOP", "hash": "#comandos-top", "partial": "partials/menu/comandos-top.html" },
 { "label": "COMANDOS TERMINAL", "hash": "#comandos-help", "partial": "partials/menu/comandos-help.html" },
 { "label": "PERMISSÕES DO LINUX", "hash": "#permissao-linux", "partial": "partials/menu/permissao-linux.html" },
