@@ -1,7 +1,7 @@
 /* PÁGINA GERAL */
 /* === TOKENS DE TEMA === */
 :root {
-  --bg: #0c0c0c;   /* fundo página (light) */
+  --bg: #000000;   /* fundo página (light) */
   --text: #000000; /* texto padrão (light) */
   --card: #000000; /* fundo dos blocos (light) */
 }
@@ -30,7 +30,7 @@ html, body {
 
 /* Modo escuro - menu */
 [data-theme="dark"] nav {
-  background-color: #333333;
+  background-color: #555555;
   border-bottom: 1px solid #444444;
 }
 
@@ -41,7 +41,7 @@ nav {
   left: 0;
   width: 100%;
   background-color: #000000;
-  border-bottom: 1px solid rgb(0, 113, 179); /* Linha de separação */
+  border-bottom: 1px solid rgba(255, 255, 255, 0); /* Linha de separação */
   padding: 8px 12px;
   box-sizing: border-box;
   z-index: 1000;
@@ -102,8 +102,8 @@ nav .menu {
   /* largura adaptativa pra desktop e mobile */
   width: clamp(280px, 30vw, 380px);
 
-  background: #000;
-  border-left: 1px solid rgb(0,113,179);
+  background: #000000;
+  border-left: 1px solid rgb(255, 255, 255);
 
   display: flex;
   flex-direction: column;
@@ -160,7 +160,7 @@ nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.45);
+  background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   transition: opacity .25s ease;
   z-index: 900;
@@ -195,7 +195,7 @@ nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate
   appearance: none;
   background: transparent;
   border: 0;
-  color: #fff;
+  color: #ffd904;
   font: inherit;
   font-weight: bold;
   width: 100%;
@@ -236,7 +236,7 @@ nav[data-open] .hamburger .bar:nth-child(3) { transform: translateY(-7px) rotate
   max-height: 0;
   overflow: hidden;
   transition: max-height .25s ease;
-  border-left: 1px dashed rgba(255,255,255,.2);
+  border-left: 1px dashed rgb(255, 0, 0);
 }
 
 /* quando aberto */

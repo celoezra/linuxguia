@@ -1,13 +1,8 @@
-  /* Seções */
-  .homepage, .comandos-df, .comandos-top, .comandos-help, .permissao-linux, .redes-basico, .ssh, .samba, .gerenciador-pacotes, .filesystem, .xorg {
-    background-color: var(--card);  /* Cor de fundo */
-    color: inherit;
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 8px; /* Cantos arredondados (opcional) */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil (opcional) */
-    margin-bottom: 1em; /* Espaço abaixo do parágrafo */
-    box-sizing: border-box; /* Inclui padding e borda nas dimensões */
-  }
-  
-  
-  
+/* Seções/blocos: use o mesmo token p/ evitar “faixa” de tons diferentes */
+section, .card, .homepage, .comandos-df, .comandos-top, .comandos-help,
+.permissao-linux, .redes-basico, .ssh, .samba, .gerenciador-pacotes,
+.filesystem, .xorg {
+  background-color: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
