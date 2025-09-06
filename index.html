@@ -430,10 +430,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <p class="pconf">Exemplo de configuração estática para a interface <strong>eth0</strong>:</p>
   <pre><code>iface eth0 inet static
-    address 192.168.1.100
-    netmask 255.255.255.0
-    gateway 192.168.1.1
-    dns-nameservers 8.8.8.8 1.1.1.1
+    address 192.168.1.100 #Ip do seu computador-cliete
+    netmask 255.255.255.0 #Mascará da internet
+    gateway 192.168.1.1 #Gateway da internet
+    dns-nameservers 8.8.8.8 1.1.1.1 #Dns para consulta, esse dns é do google e Cloudflare
 </code></pre>
 
   <cite>A linha <strong>dns-nameservers</strong> é opcional, use servidores confiáveis (Google, Cloudflare, seu provedor).</cite>
