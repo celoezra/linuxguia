@@ -1,5 +1,6 @@
 {
 "items": [
+{ "label": "Home Page", "hash": "#homepage", "partial": "partials/menu/homepage.html" },
 { "label": "COMANDOS DF", "hash": "#comandos-df", "partial": "partials/menu/comandos-df.html" },
 { "label": "COMANDOS TOP", "hash": "#comandos-top", "partial": "partials/menu/comandos-top.html" },
 { "label": "COMANDOS TERMINAL", "hash": "#comandos-help", "partial": "partials/menu/comandos-help.html" },
@@ -18,5 +19,5 @@
 { "label": "FILESYSTEM", "hash": "#filesystem", "partial": "partials/menu/filesystem.html" },
 { "label": "XORG", "hash": "#xorg", "partial": "partials/menu/xorg.html" }
 ],
-"defaultHash": "#comandos-df"
+"defaultHash": "#homepage"
 }
